@@ -14,9 +14,6 @@
 		9D42B913235ACC5E004092F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D42B912235ACC5E004092F9 /* Assets.xcassets */; };
 		9D42B916235ACC5E004092F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D42B914235ACC5E004092F9 /* LaunchScreen.storyboard */; };
 		9DB3FFA923777DD80035B148 /* CustomNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3FFA823777DD80035B148 /* CustomNavController.swift */; };
-		9DB3FFAC23779A880035B148 /* Gibson-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D72599D235AD41900D558B1 /* Gibson-Light.ttf */; };
-		9DB3FFAD23779A8B0035B148 /* Gibson-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D72599E235AD41900D558B1 /* Gibson-SemiBold.ttf */; };
-		9DB3FFAE23779A8D0035B148 /* Gibson.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D72599F235AD41900D558B1 /* Gibson.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -147,10 +144,7 @@
 			files = (
 				9D42B916235ACC5E004092F9 /* LaunchScreen.storyboard in Resources */,
 				9D42B913235ACC5E004092F9 /* Assets.xcassets in Resources */,
-				9DB3FFAE23779A8D0035B148 /* Gibson.ttf in Resources */,
 				9D42B911235ACC5D004092F9 /* Main.storyboard in Resources */,
-				9DB3FFAC23779A880035B148 /* Gibson-Light.ttf in Resources */,
-				9DB3FFAD23779A8B0035B148 /* Gibson-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
