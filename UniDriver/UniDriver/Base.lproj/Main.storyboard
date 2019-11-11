@@ -84,6 +84,33 @@
             <point key="canvasLocation" x="137.68115942028987" y="117.85714285714285"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="wUW-Li-2ij">
+            <objects>
+                <viewController id="tnV-ya-Gy3" customClass="ViewController" customModule="UniDriver" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QQ0-Ek-8bH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="waw-2U-EG4"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eiA-5E-4Oe">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="k1f-KR-83A">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="edx-Dy-vdx">
+                                <rect key="frame" x="20" y="7" width="36" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="union"/>
+                                <connections>
+                                    <action selector="back:" destination="tnV-ya-Gy3" eventType="touchUpInside" id="8Eg-ro-Ea9"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eq2-Il-Kwt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="1556"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="6l7-4z-ntK">
             <objects>
                 <viewController id="2k6-5w-RdN" customClass="ViewController" customModule="UniDriver" customModuleProvider="target" sceneMemberID="viewController">
@@ -110,6 +137,9 @@
                                 <state key="normal" title="Driver" backgroundImage="button">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <segue destination="MPJ-ym-IxK" kind="show" id="OH2-4w-Mj2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUe-ca-6bR">
                                 <rect key="frame" x="26" y="567" width="362" height="57"/>
@@ -118,6 +148,9 @@
                                 <state key="normal" title="Rider" backgroundImage="button">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <segue destination="tnV-ya-Gy3" kind="show" id="Sjj-Wn-fUi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -144,12 +177,67 @@
             <point key="canvasLocation" x="138" y="842"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="kLR-1k-I9U">
+            <objects>
+                <viewController id="MPJ-ym-IxK" customClass="ViewController" customModule="UniDriver" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JZC-kE-f9J">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="q3J-Zi-7YB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="GO1-Vt-exc">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="op7-me-pnE">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9qj-Of-1SH">
+                                <rect key="frame" x="20" y="7" width="36" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="union"/>
+                                <connections>
+                                    <action selector="back:" destination="MPJ-ym-IxK" eventType="touchUpInside" id="gtB-XY-cgb"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0ID-8y-iGa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1077" y="842"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="dXc-Bx-vIu">
             <objects>
                 <viewController id="zIr-Gc-WWq" customClass="ViewController" customModule="UniDriver" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vud-pY-g16">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="   Email" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" background="button" translatesAutoresizingMaskIntoConstraints="NO" id="U9Z-Eu-VSE">
+                                <rect key="frame" x="27" y="300" width="361" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" name="Gibson-Regular" family="Gibson" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="   Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" background="button" translatesAutoresizingMaskIntoConstraints="NO" id="xkR-F5-YpO">
+                                <rect key="frame" x="27" y="393" width="361" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" name="Gibson-Regular" family="Gibson" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBw-ee-mT6">
+                                <rect key="frame" x="27" y="485" width="361" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="signInButton"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="University Driver" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KoC-jZ-Bws">
+                                <rect key="frame" x="33" y="123" width="349" height="137"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Gibson-SemiBold" family="Gibson" pointSize="58"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="KTG-Dq-PTc"/>
                     </view>
@@ -177,6 +265,7 @@
     </scenes>
     <resources>
         <image name="button" width="362" height="57"/>
+        <image name="signInButton" width="361" height="57"/>
         <image name="union" width="18" height="15"/>
         <image name="west_porch001-b" width="1600" height="900"/>
     </resources>
