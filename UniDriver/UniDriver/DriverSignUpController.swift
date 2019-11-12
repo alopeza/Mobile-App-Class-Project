@@ -2,9 +2,7 @@
 //  DriverSignUpController.swift
 //  UniDriver
 //
-//  Created by Zachary Garlett on 11/11/19.
-//  Copyright © 2019 Zachary Garlett. All rights reserved.
-//
+
 
 import UIKit
 
