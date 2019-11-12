@@ -83,10 +83,10 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="117.85714285714285"/>
         </scene>
-        <!--View Controller-->
+        <!--Rider Sign Up Controller-->
         <scene sceneID="wUW-Li-2ij">
             <objects>
-                <viewController id="tnV-ya-Gy3" customClass="ViewController" customModule="UniDriver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tnV-ya-Gy3" customClass="RiderSignUpController" customModule="UniDriver" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QQ0-Ek-8bH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,13 +136,6 @@
                                 <fontDescription key="fontDescription" name="Gibson-Regular" family="Gibson" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name of Credit Card" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uki-FM-yj2">
-                                <rect key="frame" x="42" y="318" width="330" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <fontDescription key="fontDescription" name="Gibson-Regular" family="Gibson" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Credit Card #" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xSJ-bF-IuA">
                                 <rect key="frame" x="42" y="383" width="330" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -173,9 +166,16 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="registerButton"/>
                                 <connections>
-                                    <segue destination="zIr-Gc-WWq" kind="presentation" id="Nfh-9d-OAb"/>
+                                    <segue destination="zIr-Gc-WWq" kind="show" id="M2w-61-FXh"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name of Credit Card" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uki-FM-yj2">
+                                <rect key="frame" x="42" y="318" width="330" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <fontDescription key="fontDescription" name="Gibson-Regular" family="Gibson" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="waw-2U-EG4"/>
@@ -187,11 +187,20 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="union"/>
                                 <connections>
-                                    <action selector="back:" destination="tnV-ya-Gy3" eventType="touchUpInside" id="8Eg-ro-Ea9"/>
+                                    <action selector="back:" destination="tnV-ya-Gy3" eventType="touchUpInside" id="Owp-34-sT0"/>
                                 </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="cardNumber" destination="xSJ-bF-IuA" id="frs-WW-exe"/>
+                        <outlet property="cvv" destination="H0G-2g-Tpx" id="qHB-2T-5Ox"/>
+                        <outlet property="email" destination="VdI-gD-UMk" id="p4r-ax-AH1"/>
+                        <outlet property="expDate" destination="njB-t7-5Ss" id="NOf-sC-0mq"/>
+                        <outlet property="firstName" destination="woT-n7-B7b" id="dCX-oR-Hna"/>
+                        <outlet property="lastName" destination="BTd-56-g76" id="Cxm-zF-uCU"/>
+                        <outlet property="nameOfCard" destination="uki-FM-yj2" id="AG3-q2-DcA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eq2-Il-Kwt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -263,10 +272,10 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="841.74107142857144"/>
         </scene>
-        <!--View Controller-->
+        <!--Driver Sign Up Controller-->
         <scene sceneID="kLR-1k-I9U">
             <objects>
-                <viewController id="MPJ-ym-IxK" customClass="ViewController" customModule="UniDriver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MPJ-ym-IxK" customClass="DriverSignUpController" customModule="UniDriver" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JZC-kE-f9J">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -386,7 +395,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="registerButton"/>
                                 <connections>
-                                    <segue destination="zIr-Gc-WWq" kind="presentation" id="Iav-4I-u3g"/>
+                                    <segue destination="zIr-Gc-WWq" kind="show" id="rA8-ib-Ipl"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -400,22 +409,34 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="union"/>
                                 <connections>
-                                    <action selector="back:" destination="MPJ-ym-IxK" eventType="touchUpInside" id="gtB-XY-cgb"/>
+                                    <action selector="back:" destination="MPJ-ym-IxK" eventType="touchUpInside" id="6Us-jl-gzh"/>
                                 </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="bankAccountNumber" destination="E89-pu-Rkd" id="3lI-i5-Jhh"/>
+                        <outlet property="bankName" destination="jsK-Sg-ALO" id="zJu-kx-Sjd"/>
+                        <outlet property="carMake" destination="RY6-jp-Ln4" id="HLw-zI-eU0"/>
+                        <outlet property="carModel" destination="sJO-cN-LCP" id="BqQ-mM-6bF"/>
+                        <outlet property="colorOfCar" destination="JyR-Cc-SyU" id="9J8-V9-u1B"/>
+                        <outlet property="email" destination="yuE-bN-Tcb" id="jHQ-A4-FnG"/>
+                        <outlet property="firstName" destination="T8v-sx-a9H" id="x1A-KS-4QM"/>
+                        <outlet property="hourlyRate" destination="sTV-it-lgN" id="0yJ-S5-a1d"/>
+                        <outlet property="lastName" destination="UpS-yQ-PAa" id="4Wj-va-y39"/>
+                        <outlet property="licensePlate" destination="sSs-P6-Ooa" id="VtA-4f-Znh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ID-8y-iGa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076.8115942028987" y="841.74107142857144"/>
         </scene>
-        <!--View Controller-->
+        <!--Login Controller-->
         <scene sceneID="dXc-Bx-vIu">
             <objects>
-                <viewController id="zIr-Gc-WWq" customClass="ViewController" customModule="UniDriver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zIr-Gc-WWq" customClass="LoginController" customModule="UniDriver" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vud-pY-g16">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="   Email" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" background="button" translatesAutoresizingMaskIntoConstraints="NO" id="U9Z-Eu-VSE">
@@ -436,6 +457,9 @@
                                 <rect key="frame" x="27" y="485" width="361" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="signInButton"/>
+                                <connections>
+                                    <segue destination="rLX-LU-iHF" kind="show" id="lZs-bc-Lgb"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="University Driver" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KoC-jZ-Bws">
                                 <rect key="frame" x="33" y="123" width="349" height="137"/>
@@ -456,7 +480,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="union"/>
                                 <connections>
-                                    <action selector="back:" destination="zIr-Gc-WWq" eventType="touchUpInside" id="mzh-D2-9Jt"/>
+                                    <action selector="back:" destination="zIr-Gc-WWq" eventType="touchUpInside" id="B45-Hi-ofo"/>
                                 </connections>
                             </button>
                             <connections>
@@ -464,10 +488,38 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="email" destination="U9Z-Eu-VSE" id="UVB-QO-tFE"/>
+                        <outlet property="password" destination="xkR-F5-YpO" id="jS4-cS-dQi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dri-lT-Hu3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076.8115942028987" y="117.85714285714285"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7f3-ed-twC">
+            <objects>
+                <viewController id="rLX-LU-iHF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MWj-K9-TfT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="iMn-mW-rou"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="blw-kh-ryy">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="RXY-aA-gvP">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Yy6-fB-imG">
+                                <rect key="frame" x="20" y="7" width="36" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="union"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sYl-Vi-0Lj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2004" y="118"/>
         </scene>
     </scenes>
     <resources>
@@ -478,6 +530,6 @@
         <image name="west_porch001-b" width="1600" height="900"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Iav-4I-u3g"/>
+        <segue reference="M2w-61-FXh"/>
     </inferredMetricsTieBreakers>
 </document>

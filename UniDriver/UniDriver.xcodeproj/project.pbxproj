@@ -13,6 +13,14 @@
 		9D42B911235ACC5D004092F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D42B90F235ACC5D004092F9 /* Main.storyboard */; };
 		9D42B913235ACC5E004092F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D42B912235ACC5E004092F9 /* Assets.xcassets */; };
 		9D42B916235ACC5E004092F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D42B914235ACC5E004092F9 /* LaunchScreen.storyboard */; };
+		9D547323237A47B400BDB3E3 /* RiderSignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D547322237A47B400BDB3E3 /* RiderSignUpController.swift */; };
+		9D547325237A47C200BDB3E3 /* DriverSignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D547324237A47C200BDB3E3 /* DriverSignUpController.swift */; };
+		9D547327237A4A5400BDB3E3 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D547326237A4A5400BDB3E3 /* LoginController.swift */; };
+		9D547328237A4BB500BDB3E3 /* Gibson-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D72599D235AD41900D558B1 /* Gibson-Light.ttf */; };
+		9D547329237A4BB800BDB3E3 /* Gibson.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D72599F235AD41900D558B1 /* Gibson.ttf */; };
+		9D54732A237A4BBB00BDB3E3 /* Gibson-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D72599E235AD41900D558B1 /* Gibson-SemiBold.ttf */; };
+		9D54732C237A4C0900BDB3E3 /* RiderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D54732B237A4C0900BDB3E3 /* RiderController.swift */; };
+		9D54732E237A4C1900BDB3E3 /* DriverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D54732D237A4C1900BDB3E3 /* DriverController.swift */; };
 		9DB3FFA923777DD80035B148 /* CustomNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3FFA823777DD80035B148 /* CustomNavController.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +33,11 @@
 		9D42B912235ACC5E004092F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D42B915235ACC5E004092F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D42B917235ACC5E004092F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D547322237A47B400BDB3E3 /* RiderSignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderSignUpController.swift; sourceTree = "<group>"; };
+		9D547324237A47C200BDB3E3 /* DriverSignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverSignUpController.swift; sourceTree = "<group>"; };
+		9D547326237A4A5400BDB3E3 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		9D54732B237A4C0900BDB3E3 /* RiderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderController.swift; sourceTree = "<group>"; };
+		9D54732D237A4C1900BDB3E3 /* DriverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverController.swift; sourceTree = "<group>"; };
 		9D72599D235AD41900D558B1 /* Gibson-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gibson-Light.ttf"; sourceTree = "<group>"; };
 		9D72599E235AD41900D558B1 /* Gibson-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gibson-SemiBold.ttf"; sourceTree = "<group>"; };
 		9D72599F235AD41900D558B1 /* Gibson.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Gibson.ttf; sourceTree = "<group>"; };
@@ -70,6 +83,11 @@
 				9D42B917235ACC5E004092F9 /* Info.plist */,
 				9DF81CCB235AD53000CAAB52 /* Font */,
 				9DB3FFA823777DD80035B148 /* CustomNavController.swift */,
+				9D547322237A47B400BDB3E3 /* RiderSignUpController.swift */,
+				9D547324237A47C200BDB3E3 /* DriverSignUpController.swift */,
+				9D547326237A4A5400BDB3E3 /* LoginController.swift */,
+				9D54732B237A4C0900BDB3E3 /* RiderController.swift */,
+				9D54732D237A4C1900BDB3E3 /* DriverController.swift */,
 			);
 			path = UniDriver;
 			sourceTree = "<group>";
@@ -143,8 +161,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D42B916235ACC5E004092F9 /* LaunchScreen.storyboard in Resources */,
+				9D547329237A4BB800BDB3E3 /* Gibson.ttf in Resources */,
 				9D42B913235ACC5E004092F9 /* Assets.xcassets in Resources */,
+				9D54732A237A4BBB00BDB3E3 /* Gibson-SemiBold.ttf in Resources */,
 				9D42B911235ACC5D004092F9 /* Main.storyboard in Resources */,
+				9D547328237A4BB500BDB3E3 /* Gibson-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,8 +178,13 @@
 			files = (
 				9DB3FFA923777DD80035B148 /* CustomNavController.swift in Sources */,
 				9D42B90E235ACC5D004092F9 /* ViewController.swift in Sources */,
+				9D54732C237A4C0900BDB3E3 /* RiderController.swift in Sources */,
 				9D42B90A235ACC5D004092F9 /* AppDelegate.swift in Sources */,
+				9D547323237A47B400BDB3E3 /* RiderSignUpController.swift in Sources */,
+				9D54732E237A4C1900BDB3E3 /* DriverController.swift in Sources */,
 				9D42B90C235ACC5D004092F9 /* SceneDelegate.swift in Sources */,
+				9D547327237A4A5400BDB3E3 /* LoginController.swift in Sources */,
+				9D547325237A47C200BDB3E3 /* DriverSignUpController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
