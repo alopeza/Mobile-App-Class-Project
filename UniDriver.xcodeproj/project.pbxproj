@@ -165,6 +165,7 @@
 				9D42B903235ACC5D004092F9 /* Frameworks */,
 				9D42B904235ACC5D004092F9 /* Resources */,
 				CB5B8103F7001DCA4CDAF3B8 /* [CP] Embed Pods Frameworks */,
+				0AC71EBB01E3965E52365D8A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -225,6 +226,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0AC71EBB01E3965E52365D8A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UniDriver/Pods-UniDriver-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UniDriver/Pods-UniDriver-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UniDriver/Pods-UniDriver-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		99CEF4300E4841EE9D29E1F0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

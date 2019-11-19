@@ -10,5 +10,6 @@ target 'UniDriver' do
   # https://firebase.google.com/docs/ios/setup#available-pods
   pod 'Firebase', '>= 2.5.0'
   pod 'Firebase/Database'
+  pod 'GoogleMaps'
 
-end
+end	
