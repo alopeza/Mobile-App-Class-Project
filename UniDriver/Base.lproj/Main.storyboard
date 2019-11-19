@@ -458,6 +458,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="signInButton"/>
                                 <connections>
+                                    <action selector="SignIn:" destination="zIr-Gc-WWq" eventType="touchUpInside" id="Vp2-Mg-eKM"/>
                                     <segue destination="rLX-LU-iHF" kind="show" id="lZs-bc-Lgb"/>
                                 </connections>
                             </button>
