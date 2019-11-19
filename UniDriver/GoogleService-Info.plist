@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CLIENT_ID</key>
+    <string>176553886759-5bd9047ve5b8p0spds4tetaa84ml9i68.apps.googleusercontent.com</string>
+    <key>REVERSED_CLIENT_ID</key>
+    <string>com.googleusercontent.apps.176553886759-5bd9047ve5b8p0spds4tetaa84ml9i68</string>
+    <key>API_KEY</key>
+    <string>AIzaSyBIJAav-BoZxpuQ4Sdqv8WCmjste0HvzEs</string>
+    <key>GCM_SENDER_ID</key>
+    <string>176553886759</string>
+    <key>PLIST_VERSION</key>
+    <string>1</string>
+    <key>BUNDLE_ID</key>
+    <string>okstate.cs.unidriver</string>
+    <key>PROJECT_ID</key>
+    <string>unidriver-90a60</string>
+    <key>STORAGE_BUCKET</key>
+    <string>unidriver-90a60.appspot.com</string>
+    <key>IS_ADS_ENABLED</key>
+    <false></false>
+    <key>IS_ANALYTICS_ENABLED</key>
+    <false></false>
+    <key>IS_APPINVITE_ENABLED</key>
+    <true></true>
+    <key>IS_GCM_ENABLED</key>
+    <true></true>
+    <key>IS_SIGNIN_ENABLED</key>
+    <true></true>
+    <key>GOOGLE_APP_ID</key>
+    <string>1:176553886759:ios:e9cff98c4a04e32384ba02</string>
+    <key>DATABASE_URL</key>
+    <string>https://unidriver-90a60.firebaseio.com</string>
+</dict>
+</plist>
