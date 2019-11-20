@@ -9,7 +9,9 @@ class DriverController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in } //listener for signed in user's account info
+        
         // Do any additional setup after loading the view.
     }
     

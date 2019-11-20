@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Z4-PM-7Mb">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -458,6 +458,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="signInButton"/>
                                 <connections>
+                                    <action selector="SignIn:" destination="zIr-Gc-WWq" eventType="touchUpInside" id="Vp2-Mg-eKM"/>
                                     <segue destination="rLX-LU-iHF" kind="show" id="lZs-bc-Lgb"/>
                                 </connections>
                             </button>
@@ -504,7 +505,19 @@
                     <view key="view" contentMode="scaleToFill" id="MWj-K9-TfT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4TL-N4-aJS" customClass="GMSMapView">
+                                <rect key="frame" x="12" y="100" width="390" height="750"/>
+                                <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="iMn-mW-rou" firstAttribute="bottom" secondItem="4TL-N4-aJS" secondAttribute="bottom" constant="12" id="DGB-Cc-EoF"/>
+                            <constraint firstItem="iMn-mW-rou" firstAttribute="trailing" secondItem="4TL-N4-aJS" secondAttribute="trailing" constant="12" id="aaZ-bC-KHB"/>
+                            <constraint firstItem="4TL-N4-aJS" firstAttribute="top" secondItem="iMn-mW-rou" secondAttribute="top" constant="12" id="eI2-rA-b72"/>
+                            <constraint firstItem="4TL-N4-aJS" firstAttribute="leading" secondItem="iMn-mW-rou" secondAttribute="leading" constant="12" id="rSJ-l8-pe4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="iMn-mW-rou"/>
                     </view>
                     <navigationItem key="navigationItem" id="blw-kh-ryy">
@@ -530,6 +543,6 @@
         <image name="west_porch001-b" width="1600" height="900"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="M2w-61-FXh"/>
+        <segue reference="rA8-ib-Ipl"/>
     </inferredMetricsTieBreakers>
 </document>
