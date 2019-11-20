@@ -115,14 +115,14 @@
                                 <rect key="frame" x="27" y="437" width="361" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="First Name" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="woT-n7-B7b">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Username" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="woT-n7-B7b">
                                 <rect key="frame" x="42" y="123" width="330" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <fontDescription key="fontDescription" name="Gibson-Regular" family="Gibson" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Last Name" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BTd-56-g76">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BTd-56-g76">
                                 <rect key="frame" x="42" y="188" width="330" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -166,6 +166,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="registerButton"/>
                                 <connections>
+                                    <action selector="signUp:" destination="tnV-ya-Gy3" eventType="touchUpInside" id="Oys-bq-HwS"/>
                                     <segue destination="zIr-Gc-WWq" kind="show" id="M2w-61-FXh"/>
                                 </connections>
                             </button>
@@ -439,7 +440,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="   Email" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" background="button" translatesAutoresizingMaskIntoConstraints="NO" id="U9Z-Eu-VSE">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="   Username" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" background="button" translatesAutoresizingMaskIntoConstraints="NO" id="U9Z-Eu-VSE">
                                 <rect key="frame" x="27" y="300" width="361" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -459,7 +460,6 @@
                                 <state key="normal" backgroundImage="signInButton"/>
                                 <connections>
                                     <action selector="SignIn:" destination="zIr-Gc-WWq" eventType="touchUpInside" id="Vp2-Mg-eKM"/>
-                                    <segue destination="rLX-LU-iHF" kind="show" id="lZs-bc-Lgb"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="University Driver" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KoC-jZ-Bws">
@@ -492,6 +492,7 @@
                     <connections>
                         <outlet property="email" destination="U9Z-Eu-VSE" id="UVB-QO-tFE"/>
                         <outlet property="password" destination="xkR-F5-YpO" id="jS4-cS-dQi"/>
+                        <segue destination="rLX-LU-iHF" kind="show" identifier="SuccessfulSignin" id="HdW-C2-3Fv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dri-lT-Hu3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -543,6 +544,6 @@
         <image name="west_porch001-b" width="1600" height="900"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rA8-ib-Ipl"/>
+        <segue reference="M2w-61-FXh"/>
     </inferredMetricsTieBreakers>
 </document>

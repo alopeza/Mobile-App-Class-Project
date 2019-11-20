@@ -8,8 +8,8 @@ import UIKit
 
 class RiderSignUpController: UIViewController {
 
-    @IBOutlet weak var firstName: UITextField!
-    @IBOutlet weak var lastName: UITextField!
+    @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var password: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var nameOfCard: UITextField!
     @IBOutlet weak var cardNumber: UITextField!
@@ -21,6 +21,16 @@ class RiderSignUpController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    
+    @IBAction func signUp(_ sender: Any) {
+        // need to add code to check if username already exists, prevent segue if so and present alert
+        
+        //create new user account
+        let newRider = UniUser(username: username.text!, password: password.text!, name: nameOfCard.text!, email: email.text!, userType: "rider")
+        newRider.setCCInfo(ccNumber: cardNumber.text!, ccExpDate: expDate.text!, cvv: cvv.text!)
+        
     }
     
     @IBAction func back(_ sender: Any) {

@@ -26,6 +26,7 @@ class UniUser{
     var key: String
     var email: String
     var username: String
+    var password: String
     var name: String
     var userType: UserType
     var currentLocation: Location?
@@ -35,13 +36,20 @@ class UniUser{
     var bankInfo: FinancialInfo?
     var driverFare: Double?
     
-    init (username: String, name: String, email: String, userType: UserType, key: String = ""){
+    init (username: String, password: String, name: String, email: String, userType: String){
         self.username = username
+        self.password = password
         self.name = name
         self.email = email
-        self.userType = userType
-        self.ref = nil
-        self.key = key
+        if userType == "rider" {
+            self.userType = UserType.Rider
+        }
+        else {
+            self.userType = UserType.Driver
+        }
+        self.ref = Database.database().reference().child("uni-user")
+        self.key = ref.childByAutoId().key!
+        ref.child(key).setValue(self)
     }
     
     init?(snapshot: DataSnapshot) {
@@ -49,6 +57,7 @@ class UniUser{
             let value = snapshot.value as? [String: AnyObject],
             let email = value["email"] as? String,
             let username = value["username"] as? String,
+            let password = value["password"] as? String,
             let name = value["name"] as? String,
             let userType = value["userType"] as? UserType
             else {
@@ -59,6 +68,7 @@ class UniUser{
         self.key = snapshot.key
         self.email = email
         self.username = username
+        self.password = password
         self.name = name
         self.userType = userType
     }
@@ -69,6 +79,7 @@ class UniUser{
             "key": key,
             "email": email,
             "username": username,
+            "password": password,
             "name": name,
             "userType": userType.description,
             "location":[currentLocation?.toAnyObject()],
@@ -93,10 +104,11 @@ class UniUser{
     }
     
     //Two seperate set functions here because Riders only need cc info and Drivers only need bank info
-    func setCCInfo(ccNumber: String, ccExpDate: String){
+    func setCCInfo(ccNumber: String, ccExpDate: String, cvv: String){
         self.bankInfo = FinancialInfo()
         self.bankInfo?.ccNumber = ccNumber
         self.bankInfo?.ccExpDate = ccExpDate
+        self.bankInfo?.cvv = cvv
     }
     
     func setBankInfo(bankName: String, bankAccountNumber: String, bankRoutingNumber: String){
