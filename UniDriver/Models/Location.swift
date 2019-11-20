@@ -3,12 +3,12 @@
 //  UniDriver
 //
 //  Created by user155127 on 11/17/19.
-//  Copyright © 2019 Zachary Garlett. All rights reserved.
+//  Copyright © 2019 Robert Cook. All rights reserved.
 //
 
 import Foundation
 
-struct Location{
+class Location{
     var latitude: Double
     var longitude: Double
     
@@ -24,8 +24,8 @@ struct Location{
     
     func toAnyObject() -> Any{
         return [
-            "latitude": latitude,
-            "longitude": longitude
+            "latitude": latitude.description,
+            "longitude": longitude.description
         ]
     }
 }

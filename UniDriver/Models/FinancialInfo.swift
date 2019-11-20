@@ -3,17 +3,17 @@
 //  UniDriver
 //
 //  Created by user155127 on 11/17/19.
-//  Copyright © 2019 Zachary Garlett. All rights reserved.
+//  Copyright © 2019 Robert Cook. All rights reserved.
 //
 
 import Foundation
 
-struct FinancialInfo{
-    var ccNumber: String
-    var ccExpDate: String
-    var bankName: String
-    var bankAccountNumber: String
-    var bankRoutingNumber: String
+class FinancialInfo{
+    var ccNumber: String?
+    var ccExpDate: String?
+    var bankName: String?
+    var bankAccountNumber: String?
+    var bankRoutingNumber: String?
     
     func toAnyObject() -> Any{
         return [

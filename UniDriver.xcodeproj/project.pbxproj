@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		3D2303CF5883261FA99783D3 /* Pods_UniDriver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83428B08D93EAF6CC4DC4A04 /* Pods_UniDriver.framework */; };
+		8A4863D22384CCC600A5F293 /* UniDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4863D12384CCC600A5F293 /* UniDataController.swift */; };
 		8AD0485E2383934700111523 /* FinancialInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD0485D2383934700111523 /* FinancialInfo.swift */; };
 		8AD048602383938B00111523 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD0485F2383938B00111523 /* Location.swift */; };
 		8AD04862238393CC00111523 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD04861238393CC00111523 /* Trip.swift */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		0694E08044E3CDF66E6BBD40 /* Pods-UniDriver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UniDriver.release.xcconfig"; path = "Target Support Files/Pods-UniDriver/Pods-UniDriver.release.xcconfig"; sourceTree = "<group>"; };
 		83428B08D93EAF6CC4DC4A04 /* Pods_UniDriver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UniDriver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A4863D12384CCC600A5F293 /* UniDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniDataController.swift; sourceTree = "<group>"; };
 		8AD0485D2383934700111523 /* FinancialInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialInfo.swift; sourceTree = "<group>"; };
 		8AD0485F2383938B00111523 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		8AD04861238393CC00111523 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				9D54732B237A4C0900BDB3E3 /* RiderController.swift */,
 				9D54732D237A4C1900BDB3E3 /* DriverController.swift */,
 				8AD04867238394F200111523 /* GoogleService-Info.plist */,
+				8A4863D12384CCC600A5F293 /* UniDataController.swift */,
 			);
 			path = UniDriver;
 			sourceTree = "<group>";
@@ -149,7 +152,6 @@
 				F763E6707DD34C48352024F9 /* Pods-UniDriver.debug.xcconfig */,
 				0694E08044E3CDF66E6BBD40 /* Pods-UniDriver.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -283,6 +285,7 @@
 				9D547323237A47B400BDB3E3 /* RiderSignUpController.swift in Sources */,
 				9D54732E237A4C1900BDB3E3 /* DriverController.swift in Sources */,
 				9D42B90C235ACC5D004092F9 /* SceneDelegate.swift in Sources */,
+				8A4863D22384CCC600A5F293 /* UniDataController.swift in Sources */,
 				8AD0485E2383934700111523 /* FinancialInfo.swift in Sources */,
 				9D547327237A4A5400BDB3E3 /* LoginController.swift in Sources */,
 				9D547325237A47C200BDB3E3 /* DriverSignUpController.swift in Sources */,

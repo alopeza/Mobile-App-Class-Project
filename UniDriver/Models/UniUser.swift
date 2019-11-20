@@ -3,16 +3,23 @@
 //  UniDriver
 //
 //  Created by user155127 on 11/17/19.
-//  Copyright © 2019 Zachary Garlett. All rights reserved.
+//  Copyright © 2019 Robert Cook. All rights reserved.
 //
 
 import Foundation
 import Firebase
 
-struct UniUser{
-    enum UserType{
+class UniUser{
+    enum UserType:CustomStringConvertible{
         case Rider
         case Driver
+        
+        var description: String{
+            switch self {
+                case .Rider: return "Rider"
+                case .Driver: return "Driver"
+            }
+        }
     }
     
     var ref: DatabaseReference!
@@ -23,9 +30,10 @@ struct UniUser{
     var userType: UserType
     var currentLocation: Location?
     var currentTrip: Trip?
-    var previousTrips: [Trip]?
+    var previousTrips: Array<Trip>?
     var car: Vehicle?
     var bankInfo: FinancialInfo?
+    var driverFare: Double?
     
     init (username: String, name: String, email: String, userType: UserType, key: String = ""){
         self.username = username
@@ -56,20 +64,59 @@ struct UniUser{
     }
     
     func toAnyObject() -> Any{
+        
         return [
             "key": key,
             "email": email,
             "username": username,
             "name": name,
-            "userType": userType
+            "userType": userType.description,
+            "location":[currentLocation?.toAnyObject()],
+            "car":[car?.toAnyObject()],
+            "bankInfo":[bankInfo?.toAnyObject()],
+            "currentTrip":[currentTrip?.toAnyObject()]
         ]
     }
     
     //Set location
-    func setLocation(lat: Double, long: Double){
-        //TODO: Figure this out
-        
-        //self.currentLocation = Location(latitude: lat, longitude: long)
+    func setCurrentLocation(lat: Double, long: Double){
+        self.currentLocation = Location(latitude: lat, longitude: long)
     }
+    
+    //Set vehicle information - expecting this to only be used for Drivers
+    func setVehicle(make: String, model: String, color: String, licensePlate: String){
+        self.car = Vehicle()
+        self.car?.make = make
+        self.car?.model = model
+        self.car?.color = color
+        self.car?.licensePlate = licensePlate
+    }
+    
+    //Two seperate set functions here because Riders only need cc info and Drivers only need bank info
+    func setCCInfo(ccNumber: String, ccExpDate: String){
+        self.bankInfo = FinancialInfo()
+        self.bankInfo?.ccNumber = ccNumber
+        self.bankInfo?.ccExpDate = ccExpDate
+    }
+    
+    func setBankInfo(bankName: String, bankAccountNumber: String, bankRoutingNumber: String){
+        self.bankInfo = FinancialInfo()
+        self.bankInfo?.bankName = bankName
+        self.bankInfo?.bankAccountNumber = bankAccountNumber
+        self.bankInfo?.bankRoutingNumber = bankRoutingNumber
+    }
+    
+//    func addTrip(startLocation: Location, destination: Location, fare: Double){
+//        guard let trips = self.previousTrips else {
+//            self.previousTrips = Array<Trip>()
+//
+//        }
+//    }
+    
+    //func getUser(username: String) -> UniUser{
+    //    let user = ref.child("uni-user").queryEqual(toValue: "cookr")
+    //
+    //    return user
+    //}
 
 }
