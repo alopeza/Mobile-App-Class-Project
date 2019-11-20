@@ -27,6 +27,16 @@ class DriverSignUpController: UIViewController {
     }
     
     
+    @IBAction func signUp(_ sender: Any) {
+        // need to add code to check if username already exists, prevent segue if so and present alert
+        
+        //create new user account
+        //let newDriver = UniUser(username: <#T##String#>, password: <#T##String#>, name: <#T##String#>, email: <#T##String#>, userType: <#T##String#>)
+        //segue to login screen
+        //performSegue(withIdentifier: "", sender: <#T##Any?#>)
+        
+    }
+    
     @IBAction func back(_ sender: Any) {
          _ = navigationController?.popViewController(animated: true)
     }

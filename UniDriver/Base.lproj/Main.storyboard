@@ -167,7 +167,6 @@
                                 <state key="normal" image="registerButton"/>
                                 <connections>
                                     <action selector="signUp:" destination="tnV-ya-Gy3" eventType="touchUpInside" id="Oys-bq-HwS"/>
-                                    <segue destination="zIr-Gc-WWq" kind="show" id="M2w-61-FXh"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name of Credit Card" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uki-FM-yj2">
@@ -201,6 +200,7 @@
                         <outlet property="firstName" destination="woT-n7-B7b" id="dCX-oR-Hna"/>
                         <outlet property="lastName" destination="BTd-56-g76" id="Cxm-zF-uCU"/>
                         <outlet property="nameOfCard" destination="uki-FM-yj2" id="AG3-q2-DcA"/>
+                        <segue destination="zIr-Gc-WWq" kind="show" identifier="riderCreated" id="5Jw-hA-Kug"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eq2-Il-Kwt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -396,6 +396,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="registerButton"/>
                                 <connections>
+                                    <action selector="signUp:" destination="MPJ-ym-IxK" eventType="touchUpInside" id="XKj-ns-tuI"/>
                                     <segue destination="zIr-Gc-WWq" kind="show" id="rA8-ib-Ipl"/>
                                 </connections>
                             </button>
@@ -544,6 +545,6 @@
         <image name="west_porch001-b" width="1600" height="900"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="M2w-61-FXh"/>
+        <segue reference="rA8-ib-Ipl"/>
     </inferredMetricsTieBreakers>
 </document>

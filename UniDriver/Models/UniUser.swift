@@ -36,20 +36,16 @@ class UniUser{
     var bankInfo: FinancialInfo?
     var driverFare: Double?
     
-    init (username: String, password: String, name: String, email: String, userType: String){
+    init (username: String, password: String, name: String, email: String, userType: UserType){
         self.username = username
         self.password = password
         self.name = name
         self.email = email
-        if userType == "rider" {
-            self.userType = UserType.Rider
-        }
-        else {
-            self.userType = UserType.Driver
-        }
-        self.ref = Database.database().reference().child("uni-user")
-        self.key = ref.childByAutoId().key!
-        ref.child(key).setValue(self)
+        self.userType = userType
+        self.ref = nil
+        self.key = "" //will change this tomorrow, possibly adding code below to UniDataController -Melanie
+            /*ref.childByAutoId().key!
+        ref.child(key).setValue(self)*/
     }
     
     init?(snapshot: DataSnapshot) {
@@ -101,6 +97,11 @@ class UniUser{
         self.car?.model = model
         self.car?.color = color
         self.car?.licensePlate = licensePlate
+    }
+    
+    //set driver's current fare
+    func setFare(fare: Double) {
+        self.driverFare? = fare
     }
     
     //Two seperate set functions here because Riders only need cc info and Drivers only need bank info

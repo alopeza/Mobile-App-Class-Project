@@ -28,9 +28,12 @@ class RiderSignUpController: UIViewController {
         // need to add code to check if username already exists, prevent segue if so and present alert
         
         //create new user account
-        let newRider = UniUser(username: username.text!, password: password.text!, name: nameOfCard.text!, email: email.text!, userType: "rider")
+        let newRider = UniUser(username: username.text!, password: password.text!, name: nameOfCard.text!, email: email.text!, userType: .Rider)
         newRider.setCCInfo(ccNumber: cardNumber.text!, ccExpDate: expDate.text!, cvv: cvv.text!)
-        
+        let newData: UniDataController
+        newData.Save(user: newRider)
+        //segue to login screen
+        performSegue(withIdentifier: "riderCreated", sender: <#T##Any?#>)
     }
     
     @IBAction func back(_ sender: Any) {
