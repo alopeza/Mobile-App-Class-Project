@@ -29,6 +29,7 @@
 		9D54732A237A4BBB00BDB3E3 /* Gibson-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D72599E235AD41900D558B1 /* Gibson-SemiBold.ttf */; };
 		9D54732C237A4C0900BDB3E3 /* RiderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D54732B237A4C0900BDB3E3 /* RiderController.swift */; };
 		9D54732E237A4C1900BDB3E3 /* DriverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D54732D237A4C1900BDB3E3 /* DriverController.swift */; };
+		9D894530238709A800EA8565 /* FindDriverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D89452F238709A800EA8565 /* FindDriverController.swift */; };
 		9DB3FFA923777DD80035B148 /* CustomNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3FFA823777DD80035B148 /* CustomNavController.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		9D72599D235AD41900D558B1 /* Gibson-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gibson-Light.ttf"; sourceTree = "<group>"; };
 		9D72599E235AD41900D558B1 /* Gibson-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gibson-SemiBold.ttf"; sourceTree = "<group>"; };
 		9D72599F235AD41900D558B1 /* Gibson.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Gibson.ttf; sourceTree = "<group>"; };
+		9D89452F238709A800EA8565 /* FindDriverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindDriverController.swift; sourceTree = "<group>"; };
 		9DB3FFA823777DD80035B148 /* CustomNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavController.swift; sourceTree = "<group>"; };
 		F763E6707DD34C48352024F9 /* Pods-UniDriver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UniDriver.debug.xcconfig"; path = "Target Support Files/Pods-UniDriver/Pods-UniDriver.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +126,7 @@
 				9D42B914235ACC5E004092F9 /* LaunchScreen.storyboard */,
 				9D42B917235ACC5E004092F9 /* Info.plist */,
 				9DF81CCB235AD53000CAAB52 /* Font */,
+				9D89452F238709A800EA8565 /* FindDriverController.swift */,
 				9DB3FFA823777DD80035B148 /* CustomNavController.swift */,
 				9D547322237A47B400BDB3E3 /* RiderSignUpController.swift */,
 				9D547324237A47C200BDB3E3 /* DriverSignUpController.swift */,
@@ -295,6 +298,7 @@
 				9DB3FFA923777DD80035B148 /* CustomNavController.swift in Sources */,
 				8AD048602383938B00111523 /* Location.swift in Sources */,
 				9D42B90E235ACC5D004092F9 /* ViewController.swift in Sources */,
+				9D894530238709A800EA8565 /* FindDriverController.swift in Sources */,
 				8AD048662383943400111523 /* Vehicle.swift in Sources */,
 				9D54732C237A4C0900BDB3E3 /* RiderController.swift in Sources */,
 				8AD04868238394F200111523 /* GoogleService-Info.plist in Sources */,
