@@ -8,12 +8,12 @@ import UIKit
 
 class RiderController: UIViewController {
 
+    @IBOutlet weak var pickUpLocation: UITextField!
+    @IBOutlet weak var dropOffLocation: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func back(_ sender: Any) {
