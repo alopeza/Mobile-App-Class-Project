@@ -18,10 +18,13 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
         // Do any additional setup after loading the view.
     }
     
     @IBAction func SignIn(_ sender: Any) {
+       
+
         
         let controller = UniDataController()
         var signedInUser: UniUser?
@@ -49,6 +52,7 @@ class LoginController: UIViewController {
                 tryAgain.addAction(okay)
                 present(tryAgain, animated: true, completion: nil)            }
         }
+
         
         //username does not exist, present alert
         else {
