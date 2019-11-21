@@ -14,7 +14,7 @@ private let LocationManager = CLLocationManager()
     @IBOutlet weak var pickUpLocation: UITextField!
     @IBOutlet weak var dropOffLocation: UITextField!
     
-    @IBOutlet weak var RiderController: GMSMapView!
+    @IBOutlet weak var RiderMapView: GMSMapView!
     override func viewDidLoad() {
         LocationManager.delegate = self as? CLLocationManagerDelegate
         LocationManager.requestWhenInUseAuthorization()
@@ -52,8 +52,8 @@ extension RiderController: CLLocationManagerDelegate {
     LocationManager.startUpdatingLocation()
       
     //5
-    RiderController.isMyLocationEnabled = true
-    RiderController.settings.myLocationButton = true
+    RiderMapView.isMyLocationEnabled = true
+    RiderMapView.settings.myLocationButton = true
   }
   
   // 6
@@ -63,8 +63,8 @@ extension RiderController: CLLocationManagerDelegate {
     }
       
     // 7
-    RiderController.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
-      
+    RiderMapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+    print(location.coordinate)
     // 8
     LocationManager.stopUpdatingLocation()
   }

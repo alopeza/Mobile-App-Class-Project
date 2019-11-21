@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Z4-PM-7Mb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Z4-PM-7Mb">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -586,6 +586,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="RiderMapView" destination="4TL-N4-aJS" id="MDb-bi-8fp"/>
                         <outlet property="dropOffLocation" destination="6iy-VI-zRg" id="yFS-v0-xiq"/>
                         <outlet property="pickUpLocation" destination="H4p-fi-SOM" id="HaC-qI-Pma"/>
                     </connections>
@@ -685,6 +686,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="DriverMapView" destination="iqx-BD-noG" id="Jg7-kE-n3Y"/>
                         <outlet property="clockInButton" destination="6cd-o7-zVN" id="Bs9-nn-awW"/>
                         <outlet property="clockOutButton" destination="SoT-Yz-awf" id="kyK-Go-V2R"/>
                     </connections>

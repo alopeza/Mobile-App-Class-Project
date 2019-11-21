@@ -16,13 +16,12 @@ class DriverController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        LocationManager.delegate = self as? CLLocationManagerDelegate
+        LocationManager.delegate = self
         LocationManager.requestWhenInUseAuthorization()
         
         clockOutButton.isHidden = true;
         clockOutButton.isEnabled = false;
     }
-    
     @IBOutlet weak var DriverMapView: GMSMapView!
     
     @IBAction func ClockIn(_ sender: Any) {
@@ -78,7 +77,7 @@ extension DriverController: CLLocationManagerDelegate {
       
     // 7
     DriverMapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
-    
+    print(location.coordinate)
     
     // 8
     LocationManager.stopUpdatingLocation()
