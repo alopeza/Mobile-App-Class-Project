@@ -12,7 +12,7 @@ class LoginController: UIViewController {
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     
-    var ref: DatabaseReference!
+    //var ref: DatabaseReference!
     
     
     override func viewDidLoad() {
@@ -22,26 +22,36 @@ class LoginController: UIViewController {
     }
     
     @IBAction func SignIn(_ sender: Any) {
-        //robert's method may be used here instead
-        //UniUser currUser = getUser(username)
-        ref = Database.database().reference(withPath: "UniUser")
-        ref.queryOrdered(byChild: "username").queryEqual(toValue: username) //query the database to see if the username exists
+        //arbitrary user needed for getUser function
+        let arbitrary: UniUser = UniUser.init(username: "m", password: "m", name: "m", email: "m", userType: .Rider)
         
-        if ref != nil { //if the user exists -> change ref to currUser here if using getUser method
-            //check if password is correct
-            /*if currUser.password == password {
-            //perform segue and pass either username or reference
-            performSegue(withIdentifier: "SuccessfulSignIn", sender: <#T##Any?#>)
-            }*/
+        //query database
+        let currUser: UniUser? = arbitrary.getUser(username: username.text!)
+        
+        //ref = Database.database().reference(withPath: "UniUser")
+        //ref.queryOrdered(byChild: "username").queryEqual(toValue: username)
+        
+        if currUser != nil { //if the user exists
+            
+            //password is correct
+            if currUser!.password == password.text! {
+                //perform segue and pass either username or reference
+                performSegue(withIdentifier: "SuccessfulSignIn", sender: password)
+            }
+                
+            //password incorrect, present alert
+            else {
+                let okay = UIAlertAction(title: "Okay", style: .default, handler: nil)
+                let tryAgain = UIAlertController(title: "Incorrect Password", message: "The password was incorrect. Please try again.", preferredStyle: .alert)
+                tryAgain.addAction(okay)
+                present(tryAgain, animated: true, completion: nil)            }
         }
+        
+        //username does not exist, present alert
         else {
-            //alert saying this user does not exist, please reenter or create a new acct
             let okay = UIAlertAction(title: "Okay", style: .default, handler: nil)
-            
-            let tryAgain = UIAlertController(title: "Invalid Username/Password", message: "The username or password was incorrect. Please try again or create a new account.", preferredStyle: .alert)
-            
+            let tryAgain = UIAlertController(title: "Invalid Username", message: "The username was incorrect. Please try again or create a new account.", preferredStyle: .alert)
             tryAgain.addAction(okay)
-            
             present(tryAgain, animated: true, completion: nil)
         }
         

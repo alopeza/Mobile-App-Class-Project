@@ -113,9 +113,8 @@ class UniUser{
         self.bankInfo?.cvv = cvv
     }
     
-    func setBankInfo(bankName: String, bankAccountNumber: String, bankRoutingNumber: String){
+    func setBankInfo(bankAccountNumber: String, bankRoutingNumber: String){
         self.bankInfo = FinancialInfo()
-        self.bankInfo?.bankName = bankName
         self.bankInfo?.bankAccountNumber = bankAccountNumber
         self.bankInfo?.bankRoutingNumber = bankRoutingNumber
     }
@@ -127,10 +126,10 @@ class UniUser{
 //        }
 //    }
     
-    //func getUser(username: String) -> UniUser{
-    //    let user = ref.child("uni-user").queryEqual(toValue: "cookr")
-    //
-    //    return user
-    //}
+    /*func getUser(username: String) -> UniUser{
+        let user = ref.child("uni-user").queryEqual(toValue: "cookr")
+        
+        return user
+    }*/
 
 }

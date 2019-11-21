@@ -197,9 +197,9 @@
                         <outlet property="cvv" destination="H0G-2g-Tpx" id="qHB-2T-5Ox"/>
                         <outlet property="email" destination="VdI-gD-UMk" id="p4r-ax-AH1"/>
                         <outlet property="expDate" destination="njB-t7-5Ss" id="NOf-sC-0mq"/>
-                        <outlet property="firstName" destination="woT-n7-B7b" id="dCX-oR-Hna"/>
-                        <outlet property="lastName" destination="BTd-56-g76" id="Cxm-zF-uCU"/>
                         <outlet property="nameOfCard" destination="uki-FM-yj2" id="AG3-q2-DcA"/>
+                        <outlet property="password" destination="BTd-56-g76" id="w6n-8N-V8d"/>
+                        <outlet property="username" destination="woT-n7-B7b" id="rZP-V0-UIt"/>
                         <segue destination="zIr-Gc-WWq" kind="show" identifier="riderCreated" id="5Jw-hA-Kug"/>
                     </connections>
                 </viewController>
@@ -281,125 +281,135 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ljy-dN-ZUZ">
+                                <rect key="frame" x="27" y="817" width="361" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="registerButton"/>
+                                <connections>
+                                    <action selector="signUp:" destination="MPJ-ym-IxK" eventType="touchUpInside" id="XKj-ns-tuI"/>
+                                </connections>
+                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="button" translatesAutoresizingMaskIntoConstraints="NO" id="vrL-Mx-eHA">
-                                <rect key="frame" x="27" y="114" width="361" height="57"/>
+                                <rect key="frame" x="27" y="100" width="361" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="button" translatesAutoresizingMaskIntoConstraints="NO" id="Nrx-Kv-EEJ">
-                                <rect key="frame" x="27" y="179" width="361" height="57"/>
+                                <rect key="frame" x="27" y="165" width="361" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="button" translatesAutoresizingMaskIntoConstraints="NO" id="Ukh-PF-PXW">
-                                <rect key="frame" x="27" y="244" width="361" height="57"/>
+                                <rect key="frame" x="27" y="230" width="361" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="button" translatesAutoresizingMaskIntoConstraints="NO" id="Ngx-Zs-zAI">
-                                <rect key="frame" x="27" y="309" width="361" height="57"/>
+                                <rect key="frame" x="27" y="295" width="361" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="button" translatesAutoresizingMaskIntoConstraints="NO" id="67Z-hv-8Zs">
-                                <rect key="frame" x="27" y="374" width="361" height="57"/>
+                                <rect key="frame" x="27" y="360" width="361" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="button" translatesAutoresizingMaskIntoConstraints="NO" id="I8r-xn-Cts">
-                                <rect key="frame" x="27" y="439" width="361" height="57"/>
+                                <rect key="frame" x="27" y="425" width="361" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="First Name" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T8v-sx-a9H">
-                                <rect key="frame" x="42" y="125" width="330" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Username" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T8v-sx-a9H">
+                                <rect key="frame" x="42" y="111" width="330" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <fontDescription key="fontDescription" name="Gibson-Regular" family="Gibson" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Last Name" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UpS-yQ-PAa">
-                                <rect key="frame" x="42" y="190" width="330" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UpS-yQ-PAa">
+                                <rect key="frame" x="42" y="176" width="330" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <fontDescription key="fontDescription" name="Gibson-Regular" family="Gibson" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yuE-bN-Tcb">
-                                <rect key="frame" x="42" y="255" width="330" height="34"/>
+                                <rect key="frame" x="42" y="241" width="330" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <fontDescription key="fontDescription" name="Gibson-Regular" family="Gibson" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Car Make" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RY6-jp-Ln4">
-                                <rect key="frame" x="42" y="320" width="330" height="34"/>
+                                <rect key="frame" x="42" y="306" width="330" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <fontDescription key="fontDescription" name="Gibson-Regular" family="Gibson" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Car Model" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sJO-cN-LCP">
-                                <rect key="frame" x="42" y="385" width="330" height="34"/>
+                                <rect key="frame" x="42" y="371" width="330" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <fontDescription key="fontDescription" name="Gibson-Regular" family="Gibson" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Color" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JyR-Cc-SyU">
-                                <rect key="frame" x="42" y="450" width="330" height="34"/>
+                                <rect key="frame" x="42" y="436" width="330" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <fontDescription key="fontDescription" name="Gibson-Regular" family="Gibson" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="button" translatesAutoresizingMaskIntoConstraints="NO" id="9rU-U9-cgD">
-                                <rect key="frame" x="27" y="504" width="361" height="57"/>
+                                <rect key="frame" x="27" y="490" width="361" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="License Plate #" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sSs-P6-Ooa">
-                                <rect key="frame" x="42" y="515" width="330" height="34"/>
+                                <rect key="frame" x="42" y="501" width="330" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <fontDescription key="fontDescription" name="Gibson-Regular" family="Gibson" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="button" translatesAutoresizingMaskIntoConstraints="NO" id="BfG-ik-9yP">
-                                <rect key="frame" x="27" y="569" width="361" height="57"/>
+                                <rect key="frame" x="27" y="555" width="361" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bank Name" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jsK-Sg-ALO">
-                                <rect key="frame" x="42" y="580" width="330" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name on Bank Account" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jsK-Sg-ALO">
+                                <rect key="frame" x="42" y="566" width="330" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <fontDescription key="fontDescription" name="Gibson-Regular" family="Gibson" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="button" translatesAutoresizingMaskIntoConstraints="NO" id="Jh4-3M-RCK">
-                                <rect key="frame" x="27" y="634" width="361" height="57"/>
+                                <rect key="frame" x="27" y="620" width="361" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bank Account #" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E89-pu-Rkd">
-                                <rect key="frame" x="42" y="645" width="330" height="34"/>
+                                <rect key="frame" x="42" y="631" width="330" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <fontDescription key="fontDescription" name="Gibson-Regular" family="Gibson" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="button" translatesAutoresizingMaskIntoConstraints="NO" id="Ngh-Vm-BF9">
-                                <rect key="frame" x="27" y="699" width="361" height="57"/>
+                                <rect key="frame" x="27" y="752" width="361" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Hourly Rate" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sTV-it-lgN">
-                                <rect key="frame" x="42" y="710" width="330" height="34"/>
+                                <rect key="frame" x="42" y="763" width="330" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <fontDescription key="fontDescription" name="Gibson-Regular" family="Gibson" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ljy-dN-ZUZ">
-                                <rect key="frame" x="27" y="788" width="361" height="57"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="button" translatesAutoresizingMaskIntoConstraints="NO" id="ScZ-d5-6Ro">
+                                <rect key="frame" x="27" y="685" width="361" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="registerButton"/>
-                                <connections>
-                                    <action selector="signUp:" destination="MPJ-ym-IxK" eventType="touchUpInside" id="XKj-ns-tuI"/>
-                                    <segue destination="zIr-Gc-WWq" kind="show" id="rA8-ib-Ipl"/>
-                                </connections>
-                            </button>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Routing Number" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WF2-dF-wo7">
+                                <rect key="frame" x="42" y="696" width="330" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <fontDescription key="fontDescription" name="Gibson-Regular" family="Gibson" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="q3J-Zi-7YB"/>
@@ -418,15 +428,17 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bankAccountNumber" destination="E89-pu-Rkd" id="3lI-i5-Jhh"/>
-                        <outlet property="bankName" destination="jsK-Sg-ALO" id="zJu-kx-Sjd"/>
                         <outlet property="carMake" destination="RY6-jp-Ln4" id="HLw-zI-eU0"/>
                         <outlet property="carModel" destination="sJO-cN-LCP" id="BqQ-mM-6bF"/>
                         <outlet property="colorOfCar" destination="JyR-Cc-SyU" id="9J8-V9-u1B"/>
                         <outlet property="email" destination="yuE-bN-Tcb" id="jHQ-A4-FnG"/>
-                        <outlet property="firstName" destination="T8v-sx-a9H" id="x1A-KS-4QM"/>
                         <outlet property="hourlyRate" destination="sTV-it-lgN" id="0yJ-S5-a1d"/>
-                        <outlet property="lastName" destination="UpS-yQ-PAa" id="4Wj-va-y39"/>
                         <outlet property="licensePlate" destination="sSs-P6-Ooa" id="VtA-4f-Znh"/>
+                        <outlet property="name" destination="jsK-Sg-ALO" id="oiz-YV-SNR"/>
+                        <outlet property="password" destination="UpS-yQ-PAa" id="d3s-7E-EGV"/>
+                        <outlet property="routingNumber" destination="WF2-dF-wo7" id="Usd-TX-TiS"/>
+                        <outlet property="username" destination="T8v-sx-a9H" id="yX3-SI-C2M"/>
+                        <segue destination="zIr-Gc-WWq" kind="show" identifier="driverCreated" id="7in-ZB-XIV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ID-8y-iGa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -491,8 +503,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="email" destination="U9Z-Eu-VSE" id="UVB-QO-tFE"/>
                         <outlet property="password" destination="xkR-F5-YpO" id="jS4-cS-dQi"/>
+                        <outlet property="username" destination="U9Z-Eu-VSE" id="u2N-kT-0eN"/>
                         <segue destination="rLX-LU-iHF" kind="show" identifier="SuccessfulSignin" id="HdW-C2-3Fv"/>
                     </connections>
                 </viewController>
@@ -545,6 +557,6 @@
         <image name="west_porch001-b" width="1600" height="900"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rA8-ib-Ipl"/>
+        <segue reference="7in-ZB-XIV"/>
     </inferredMetricsTieBreakers>
 </document>

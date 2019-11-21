@@ -8,14 +8,15 @@ import UIKit
 
 class DriverSignUpController: UIViewController {
     
-    @IBOutlet weak var firstName: UITextField!
-    @IBOutlet weak var lastName: UITextField!
+    @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var password: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var carMake: UITextField!
     @IBOutlet weak var carModel: UITextField!
     @IBOutlet weak var colorOfCar: UITextField!
     @IBOutlet weak var licensePlate: UITextField!
-    @IBOutlet weak var bankName: UITextField!
+    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var routingNumber: UITextField!
     @IBOutlet weak var bankAccountNumber: UITextField!
     @IBOutlet weak var hourlyRate: UITextField!
     
@@ -31,9 +32,33 @@ class DriverSignUpController: UIViewController {
         // need to add code to check if username already exists, prevent segue if so and present alert
         
         //create new user account
-        //let newDriver = UniUser(username: <#T##String#>, password: <#T##String#>, name: <#T##String#>, email: <#T##String#>, userType: <#T##String#>)
-        //segue to login screen
-        //performSegue(withIdentifier: "", sender: <#T##Any?#>)
+        let newDriver = UniUser(username: username.text!, password: password.text!, name: name.text!, email: email.text!, userType: .Driver)
+        newDriver.setVehicle(make: carMake.text!, model: carModel.text!, color: colorOfCar.text!, licensePlate: licensePlate.text!)
+        let fare = Double(hourlyRate.text!)!
+        newDriver.setFare(fare: fare)
+        newDriver.setBankInfo(bankAccountNumber: bankAccountNumber.text!, bankRoutingNumber: routingNumber.text!)
+        
+        //check if username already exists using arbitrary user
+        let userCheck: UniUser? = newDriver.getUser(username: username.text!)
+        
+        //username is not taken
+        if userCheck == nil {
+            
+            //save it to the database
+            let newData: UniDataController = UniDataController.init()
+            newData.Save(user: newDriver)
+            
+            //segue to login screen
+            performSegue(withIdentifier: "driverCreated", sender: username)
+        }
+        //username is taken
+        else {
+            //present alert
+            let okay = UIAlertAction(title: "Okay", style: .default, handler: nil)
+            let userTaken = UIAlertController(title: "Username Taken", message: "This username is already in use. Please choose a different username.", preferredStyle: .alert)
+            userTaken.addAction(okay)
+            present(userTaken, animated: true, completion: nil)
+        }
         
     }
     

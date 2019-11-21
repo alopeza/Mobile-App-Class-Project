@@ -12,7 +12,6 @@ class FinancialInfo{
     var ccNumber: String?
     var ccExpDate: String?
     var cvv: String?
-    var bankName: String?
     var bankAccountNumber: String?
     var bankRoutingNumber: String?
     
@@ -21,7 +20,6 @@ class FinancialInfo{
             "ccNumber": ccNumber,
             "ccExpData": ccExpDate,
             "cvv": cvv,
-            "bankName": bankName,
             "bankAccountNumber": bankAccountNumber,
             "bankRoutingNumber": bankRoutingNumber
         ]
