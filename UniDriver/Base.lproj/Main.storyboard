@@ -482,6 +482,22 @@
                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LlI-ia-J5X">
+                                <rect key="frame" x="159" y="723" width="96" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Temp to Rider"/>
+                                <connections>
+                                    <segue destination="rLX-LU-iHF" kind="show" id="PYu-Oy-clm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Lz-ql-mrY">
+                                <rect key="frame" x="157" y="636" width="101" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Temp to Driver"/>
+                                <connections>
+                                    <segue destination="Pkl-XM-IM7" kind="show" id="d4m-OU-hXv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="KTG-Dq-PTc"/>
@@ -505,7 +521,6 @@
                     <connections>
                         <outlet property="password" destination="xkR-F5-YpO" id="jS4-cS-dQi"/>
                         <outlet property="username" destination="U9Z-Eu-VSE" id="u2N-kT-0eN"/>
-                        <segue destination="rLX-LU-iHF" kind="show" identifier="SuccessfulSignin" id="HdW-C2-3Fv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dri-lT-Hu3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
