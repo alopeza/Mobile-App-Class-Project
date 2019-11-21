@@ -22,19 +22,22 @@ class LoginController: UIViewController {
     }
     
     @IBAction func SignIn(_ sender: Any) {
-        //arbitrary user needed for getUser function
-        let arbitrary: UniUser = UniUser.init(username: "m", password: "m", name: "m", email: "m", userType: .Rider)
+        
+        let controller = UniDataController()
+        var signedInUser: UniUser?
         
         //query database
-        let currUser: UniUser? = arbitrary.getUser(username: username.text!)
+        controller.getUser(userName: username.text!) { currUser in
+            signedInUser = currUser
+        }
         
         //ref = Database.database().reference(withPath: "UniUser")
         //ref.queryOrdered(byChild: "username").queryEqual(toValue: username)
         
-        if currUser != nil { //if the user exists
+        if signedInUser != nil { //if the user exists
             
             //password is correct
-            if currUser!.password == password.text! {
+            if signedInUser!.password == password.text! {
                 //perform segue and pass either username or reference
                 performSegue(withIdentifier: "SuccessfulSignIn", sender: password)
             }

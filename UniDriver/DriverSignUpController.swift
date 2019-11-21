@@ -38,9 +38,14 @@ class DriverSignUpController: UIViewController {
         newDriver.setFare(fare: fare)
         newDriver.setBankInfo(bankAccountNumber: bankAccountNumber.text!, bankRoutingNumber: routingNumber.text!)
         
-        //check if username already exists using arbitrary user
-        let userCheck: UniUser? = newDriver.getUser(username: username.text!)
+        //check if username already exists
+        let controller = UniDataController()
+        var userCheck: UniUser?
         
+        //query database
+        controller.getUser(userName: username.text!) { currUser in
+            userCheck = currUser
+        }
         //username is not taken
         if userCheck == nil {
             

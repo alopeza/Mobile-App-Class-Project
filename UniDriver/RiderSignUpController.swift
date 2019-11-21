@@ -30,9 +30,14 @@ class RiderSignUpController: UIViewController {
         let newRider = UniUser(username: username.text!, password: password.text!, name: nameOfCard.text!, email: email.text!, userType: .Rider)
         newRider.setCCInfo(ccNumber: cardNumber.text!, ccExpDate: expDate.text!, cvv: cvv.text!)
         
-        //check if username already exists using arbitrary user
-        let userCheck: UniUser? = newRider.getUser(username: username.text!)
+        //check if username already exists
+        let controller = UniDataController()
+        var userCheck: UniUser?
         
+        //query database
+        controller.getUser(userName: username.text!) { currUser in
+            userCheck = currUser
+        }
         //username is not taken
         if userCheck == nil {
             
