@@ -33,12 +33,25 @@ class UniDataController{
     }
     
     func testSave() {
-        let newUser = UniUser(username: "cookr04", name: "Robert Cook", email: "robert.cook@okstate.edu", userType: .Driver)
+        //let newUser = UniUser(username: "cookr04", name: "Robert Cook", email: "robert.cook@okstate.edu", userType: .Driver)
+        let newUser = UniUser(username: "cookr05", password: "password", name: "Robert Cook", email: "robert.cook@okstate.edu", userType: .Driver)
         
         newUser.setCurrentLocation(lat: 2.554, long: 7.867)
         newUser.setVehicle(make: "Honda", model: "Pilot", color: "2012", licensePlate: "frr433")
-        newUser.setCCInfo(ccNumber: "4353444434333222", ccExpDate: "10/12/2020")
+        newUser.setCCInfo(ccNumber: "4353444434333222", ccExpDate: "10/12/2020", cvv: "908")
         
         self.Save(user: newUser)
+    }
+    
+    func getUser(userName: String) -> UniUser? {
+        var returnUser:UniUser?
+        
+            self.userDB.queryOrdered(byChild: "username").queryEqual(toValue: userName).observeSingleEvent(of: .value, with: {snapshot in
+//            if let user = snapshot.value as? [String: AnyObject] {
+//            }
+            returnUser = UniUser(snapshot: snapshot, lookupKey: userName)!
+        })
+        
+        return returnUser
     }
 }

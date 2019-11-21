@@ -10,16 +10,16 @@ import Foundation
 import Firebase
 
 class UniUser{
-    enum UserType:CustomStringConvertible{
-        case Rider
-        case Driver
+    enum UserType:String{
+        case Rider = "Rider"
+        case Driver = "Driver"
         
-        var description: String{
-            switch self {
-                case .Rider: return "Rider"
-                case .Driver: return "Driver"
-            }
-        }
+        //var description: String{
+        //    switch self {
+        //        case .Rider: return "Rider"
+        //        case .Driver: return "Driver"
+        //    }
+        //}
     }
     
     var ref: DatabaseReference!
@@ -48,14 +48,15 @@ class UniUser{
         ref.child(key).setValue(self)*/
     }
     
-    init?(snapshot: DataSnapshot) {
+    init?(snapshot: DataSnapshot, lookupKey: String) {
         guard
-            let value = snapshot.value as? [String: AnyObject],
+            let topValue = snapshot.value as? [String: AnyObject],
+            let value = topValue[lookupKey] as? [String: AnyObject],
             let email = value["email"] as? String,
             let username = value["username"] as? String,
             let password = value["password"] as? String,
             let name = value["name"] as? String,
-            let userType = value["userType"] as? UserType
+            let userType = value["userType"] as? String
             else {
             return nil
         }
@@ -66,7 +67,7 @@ class UniUser{
         self.username = username
         self.password = password
         self.name = name
-        self.userType = userType
+        self.userType = UserType(rawValue: userType)!
     }
     
     func toAnyObject() -> Any{
@@ -77,7 +78,7 @@ class UniUser{
             "username": username,
             "password": password,
             "name": name,
-            "userType": userType.description,
+            "userType": userType.rawValue,
             "location":[currentLocation?.toAnyObject()],
             "car":[car?.toAnyObject()],
             "bankInfo":[bankInfo?.toAnyObject()],
