@@ -10,22 +10,23 @@ import Foundation
 import Firebase
 
 class UniUser{
-    enum UserType:CustomStringConvertible{
-        case Rider
-        case Driver
+    enum UserType:String{
+        case Rider = "Rider"
+        case Driver = "Driver"
         
-        var description: String{
-            switch self {
-                case .Rider: return "Rider"
-                case .Driver: return "Driver"
-            }
-        }
+        //var description: String{
+        //    switch self {
+        //        case .Rider: return "Rider"
+        //        case .Driver: return "Driver"
+        //    }
+        //}
     }
     
     var ref: DatabaseReference!
     var key: String
     var email: String
     var username: String
+    var password: String
     var name: String
     var userType: UserType
     var currentLocation: Location?
@@ -35,22 +36,27 @@ class UniUser{
     var bankInfo: FinancialInfo?
     var driverFare: Double?
     
-    init (username: String, name: String, email: String, userType: UserType, key: String = ""){
+    init (username: String, password: String, name: String, email: String, userType: UserType){
         self.username = username
+        self.password = password
         self.name = name
         self.email = email
         self.userType = userType
         self.ref = nil
-        self.key = key
+        self.key = "" //will change this tomorrow, possibly adding code below to UniDataController -Melanie
+            /*ref.childByAutoId().key!
+        ref.child(key).setValue(self)*/
     }
     
-    init?(snapshot: DataSnapshot) {
+    init?(snapshot: DataSnapshot, lookupKey: String) {
         guard
-            let value = snapshot.value as? [String: AnyObject],
+            let topValue = snapshot.value as? [String: AnyObject],
+            let value = topValue[lookupKey] as? [String: AnyObject],
             let email = value["email"] as? String,
             let username = value["username"] as? String,
+            let password = value["password"] as? String,
             let name = value["name"] as? String,
-            let userType = value["userType"] as? UserType
+            let userType = value["userType"] as? String
             else {
             return nil
         }
@@ -59,8 +65,9 @@ class UniUser{
         self.key = snapshot.key
         self.email = email
         self.username = username
+        self.password = password
         self.name = name
-        self.userType = userType
+        self.userType = UserType(rawValue: userType)!
     }
     
     func toAnyObject() -> Any{
@@ -69,8 +76,9 @@ class UniUser{
             "key": key,
             "email": email,
             "username": username,
+            "password": password,
             "name": name,
-            "userType": userType.description,
+            "userType": userType.rawValue,
             "location":[currentLocation?.toAnyObject()],
             "car":[car?.toAnyObject()],
             "bankInfo":[bankInfo?.toAnyObject()],
@@ -92,16 +100,21 @@ class UniUser{
         self.car?.licensePlate = licensePlate
     }
     
+    //set driver's current fare
+    func setFare(fare: Double) {
+        self.driverFare? = fare
+    }
+    
     //Two seperate set functions here because Riders only need cc info and Drivers only need bank info
-    func setCCInfo(ccNumber: String, ccExpDate: String){
+    func setCCInfo(ccNumber: String, ccExpDate: String, cvv: String){
         self.bankInfo = FinancialInfo()
         self.bankInfo?.ccNumber = ccNumber
         self.bankInfo?.ccExpDate = ccExpDate
+        self.bankInfo?.cvv = cvv
     }
     
-    func setBankInfo(bankName: String, bankAccountNumber: String, bankRoutingNumber: String){
+    func setBankInfo(bankAccountNumber: String, bankRoutingNumber: String){
         self.bankInfo = FinancialInfo()
-        self.bankInfo?.bankName = bankName
         self.bankInfo?.bankAccountNumber = bankAccountNumber
         self.bankInfo?.bankRoutingNumber = bankRoutingNumber
     }
@@ -113,10 +126,10 @@ class UniUser{
 //        }
 //    }
     
-    //func getUser(username: String) -> UniUser{
-    //    let user = ref.child("uni-user").queryEqual(toValue: "cookr")
-    //
-    //    return user
-    //}
+    /*func getUser(username: String) -> UniUser{
+        let user = ref.child("uni-user").queryEqual(toValue: "cookr")
+        
+        return user
+    }*/
 
 }

@@ -11,7 +11,7 @@ import Foundation
 class FinancialInfo{
     var ccNumber: String?
     var ccExpDate: String?
-    var bankName: String?
+    var cvv: String?
     var bankAccountNumber: String?
     var bankRoutingNumber: String?
     
@@ -19,7 +19,7 @@ class FinancialInfo{
         return [
             "ccNumber": ccNumber,
             "ccExpData": ccExpDate,
-            "bankName": bankName,
+            "cvv": cvv,
             "bankAccountNumber": bankAccountNumber,
             "bankRoutingNumber": bankRoutingNumber
         ]

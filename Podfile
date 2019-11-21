@@ -11,7 +11,5 @@ target 'UniDriver' do
   pod 'Firebase', '>= 2.5.0'
   pod 'Firebase/Database'
   pod 'GoogleMaps'
-  pod 'Firebase/Analytics'
-  pod 'Firebase/Auth'
 
 end	
