@@ -15,6 +15,7 @@ private let LocationManager = CLLocationManager()
     @IBOutlet weak var dropOffLocation: UITextField!
     
     @IBOutlet weak var RiderController: GMSMapView!
+    
     override func viewDidLoad() {
         LocationManager.delegate = self as? CLLocationManagerDelegate
         LocationManager.requestWhenInUseAuthorization()
