@@ -4,18 +4,26 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class DriverController: UIViewController {
 
+    private let LocationManager = CLLocationManager()
+    
     @IBOutlet weak var clockOutButton: UIButton!
     @IBOutlet weak var clockInButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        LocationManager.delegate = self
+        LocationManager.requestWhenInUseAuthorization()
+        
         clockOutButton.isHidden = true;
         clockOutButton.isEnabled = false;
     }
-
+    
+    @IBOutlet weak var DriverMapView: GMSMapView!
+    
     @IBAction func back(_ sender: Any) {
         _ = navigationController?.popViewController(animated: true)
     }
@@ -41,4 +49,37 @@ class DriverController: UIViewController {
         _ = navigationController?.popToRootViewController(animated: true)
     }
 
+ }*/
+}
+
+// MARK: - CLLocationManagerDelegate
+//1
+extension DriverController: CLLocationManagerDelegate {
+  // 2
+  func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+    // 3
+    guard status == .authorizedWhenInUse else {
+      return
+    }
+    // 4
+    LocationManager.startUpdatingLocation()
+      
+    //5
+    DriverMapView.isMyLocationEnabled = true
+    DriverMapView.settings.myLocationButton = true
+  }
+  
+  // 6
+  func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    guard let location = locations.first else {
+      return
+    }
+      
+    // 7
+    DriverMapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+    
+    
+    // 8
+    LocationManager.stopUpdatingLocation()
+  }
 }
