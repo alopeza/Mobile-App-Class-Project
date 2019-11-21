@@ -30,6 +30,8 @@
 		9D54732C237A4C0900BDB3E3 /* RiderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D54732B237A4C0900BDB3E3 /* RiderController.swift */; };
 		9D54732E237A4C1900BDB3E3 /* DriverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D54732D237A4C1900BDB3E3 /* DriverController.swift */; };
 		9DB3FFA923777DD80035B148 /* CustomNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3FFA823777DD80035B148 /* CustomNavController.swift */; };
+		C70DAF61238708E000FDC933 /* RiderAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70DAF60238708E000FDC933 /* RiderAccountController.swift */; };
+		C70DAF6323870C5100FDC933 /* DriverAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70DAF6223870C5100FDC933 /* DriverAccountController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,8 @@
 		9D72599E235AD41900D558B1 /* Gibson-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gibson-SemiBold.ttf"; sourceTree = "<group>"; };
 		9D72599F235AD41900D558B1 /* Gibson.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Gibson.ttf; sourceTree = "<group>"; };
 		9DB3FFA823777DD80035B148 /* CustomNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavController.swift; sourceTree = "<group>"; };
+		C70DAF60238708E000FDC933 /* RiderAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderAccountController.swift; sourceTree = "<group>"; };
+		C70DAF6223870C5100FDC933 /* DriverAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAccountController.swift; sourceTree = "<group>"; };
 		F763E6707DD34C48352024F9 /* Pods-UniDriver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UniDriver.debug.xcconfig"; path = "Target Support Files/Pods-UniDriver/Pods-UniDriver.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,7 +133,9 @@
 				9D547324237A47C200BDB3E3 /* DriverSignUpController.swift */,
 				9D547326237A4A5400BDB3E3 /* LoginController.swift */,
 				9D54732B237A4C0900BDB3E3 /* RiderController.swift */,
+				C70DAF60238708E000FDC933 /* RiderAccountController.swift */,
 				9D54732D237A4C1900BDB3E3 /* DriverController.swift */,
+				C70DAF6223870C5100FDC933 /* DriverAccountController.swift */,
 				8AD04867238394F200111523 /* GoogleService-Info.plist */,
 				8A4863D12384CCC600A5F293 /* UniDataController.swift */,
 			);
@@ -294,11 +300,13 @@
 				8AD04862238393CC00111523 /* Trip.swift in Sources */,
 				9DB3FFA923777DD80035B148 /* CustomNavController.swift in Sources */,
 				8AD048602383938B00111523 /* Location.swift in Sources */,
+				C70DAF61238708E000FDC933 /* RiderAccountController.swift in Sources */,
 				9D42B90E235ACC5D004092F9 /* ViewController.swift in Sources */,
 				8AD048662383943400111523 /* Vehicle.swift in Sources */,
 				9D54732C237A4C0900BDB3E3 /* RiderController.swift in Sources */,
 				8AD04868238394F200111523 /* GoogleService-Info.plist in Sources */,
 				9D42B90A235ACC5D004092F9 /* AppDelegate.swift in Sources */,
+				C70DAF6323870C5100FDC933 /* DriverAccountController.swift in Sources */,
 				8AD048642383940800111523 /* UniUser.swift in Sources */,
 				9D547323237A47B400BDB3E3 /* RiderSignUpController.swift in Sources */,
 				9D54732E237A4C1900BDB3E3 /* DriverController.swift in Sources */,
