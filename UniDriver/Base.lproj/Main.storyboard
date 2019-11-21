@@ -498,10 +498,10 @@
             </objects>
             <point key="canvasLocation" x="1076.8115942028987" y="117.85714285714285"/>
         </scene>
-        <!--View Controller-->
+        <!--Rider Controller-->
         <scene sceneID="7f3-ed-twC">
             <objects>
-                <viewController id="rLX-LU-iHF" sceneMemberID="viewController">
+                <viewController id="rLX-LU-iHF" customClass="RiderController" customModule="UniDriver" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MWj-K9-TfT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -515,14 +515,29 @@
                                 <rect key="frame" x="-7" y="61" width="429" height="228"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H4p-fi-SOM">
+                                <rect key="frame" x="71" y="131" width="309" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Gibson-SemiBold" family="Gibson" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6iy-VI-zRg">
+                                <rect key="frame" x="71" y="206" width="309" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Gibson-SemiBold" family="Gibson" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.87" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_find_driver" translatesAutoresizingMaskIntoConstraints="NO" id="vXp-kp-hN5">
-                                <rect key="frame" x="0.0" y="707" width="414" height="221"/>
+                                <rect key="frame" x="0.0" y="737" width="414" height="161"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKc-OG-dQr">
-                                <rect key="frame" x="26" y="789" width="361" height="57"/>
+                                <rect key="frame" x="53" y="789" width="308" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="find-driver-button"/>
+                                <state key="normal" image="ROUTE"/>
+                                <connections>
+                                    <action selector="FindDriver:" destination="rLX-LU-iHF" eventType="touchUpInside" id="lwc-lf-PWk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -534,6 +549,9 @@
                                 <rect key="frame" x="20" y="7" width="36" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="union"/>
+                                <connections>
+                                    <action selector="back:" destination="rLX-LU-iHF" eventType="touchUpInside" id="mD1-5W-1Wk"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -542,12 +560,59 @@
             </objects>
             <point key="canvasLocation" x="2002.8985507246377" y="117.85714285714285"/>
         </scene>
+        <!--Driver Controller-->
+        <scene sceneID="7VJ-aw-Sqc">
+            <objects>
+                <viewController id="Pkl-XM-IM7" customClass="DriverController" customModule="UniDriver" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="odf-3S-DC5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iqx-BD-noG" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.87000000476837158" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_find_driver" translatesAutoresizingMaskIntoConstraints="NO" id="5je-bf-gE4">
+                                <rect key="frame" x="0.0" y="737" width="414" height="161"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cd-o7-zVN">
+                                <rect key="frame" x="92" y="789" width="231" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="clock-in"/>
+                                <connections>
+                                    <action selector="FindDriver:" destination="Pkl-XM-IM7" eventType="touchUpInside" id="B4E-Mo-YFH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="fym-ew-S0C"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="a3j-kr-ws3">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="GBq-Cd-8yQ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7p4-o7-7Lf">
+                                <rect key="frame" x="20" y="7" width="36" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="union"/>
+                                <connections>
+                                    <action selector="back:" destination="Pkl-XM-IM7" eventType="touchUpInside" id="1bV-GH-yO9"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i6t-hP-J3D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2003" y="842"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Current-and-Destination" width="426" height="195"/>
+        <image name="ROUTE" width="308" height="57"/>
         <image name="bg_find_driver" width="414" height="159"/>
         <image name="button" width="362" height="57"/>
-        <image name="find-driver-button" width="361" height="57"/>
+        <image name="clock-in" width="231" height="57"/>
         <image name="registerButton" width="361" height="57"/>
         <image name="signInButton" width="361" height="57"/>
         <image name="union" width="18" height="15"/>
