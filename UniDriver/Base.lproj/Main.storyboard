@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Z4-PM-7Mb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Z4-PM-7Mb">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -506,18 +506,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4TL-N4-aJS" customClass="GMSMapView">
-                                <rect key="frame" x="12" y="100" width="390" height="750"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4TL-N4-aJS" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Current-and-Destination" translatesAutoresizingMaskIntoConstraints="NO" id="dcK-lp-BjO">
+                                <rect key="frame" x="-7" y="61" width="429" height="228"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.87" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_find_driver" translatesAutoresizingMaskIntoConstraints="NO" id="vXp-kp-hN5">
+                                <rect key="frame" x="0.0" y="707" width="414" height="221"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKc-OG-dQr">
+                                <rect key="frame" x="26" y="789" width="361" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="find-driver-button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="iMn-mW-rou" firstAttribute="bottom" secondItem="4TL-N4-aJS" secondAttribute="bottom" constant="12" id="DGB-Cc-EoF"/>
-                            <constraint firstItem="iMn-mW-rou" firstAttribute="trailing" secondItem="4TL-N4-aJS" secondAttribute="trailing" constant="12" id="aaZ-bC-KHB"/>
-                            <constraint firstItem="4TL-N4-aJS" firstAttribute="top" secondItem="iMn-mW-rou" secondAttribute="top" constant="12" id="eI2-rA-b72"/>
-                            <constraint firstItem="4TL-N4-aJS" firstAttribute="leading" secondItem="iMn-mW-rou" secondAttribute="leading" constant="12" id="rSJ-l8-pe4"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="iMn-mW-rou"/>
                     </view>
                     <navigationItem key="navigationItem" id="blw-kh-ryy">
@@ -532,11 +540,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sYl-Vi-0Lj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2004" y="118"/>
+            <point key="canvasLocation" x="2002.8985507246377" y="117.85714285714285"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Current-and-Destination" width="426" height="195"/>
+        <image name="bg_find_driver" width="414" height="159"/>
         <image name="button" width="362" height="57"/>
+        <image name="find-driver-button" width="361" height="57"/>
         <image name="registerButton" width="361" height="57"/>
         <image name="signInButton" width="361" height="57"/>
         <image name="union" width="18" height="15"/>
