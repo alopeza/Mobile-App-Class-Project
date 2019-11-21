@@ -22,6 +22,23 @@ class RiderAccountController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+                let controller = UniDataController()
+                var signedInUser: UniUser?
+                
+               controller.getUser(userName: "admin") { currUser in
+                signedInUser = currUser
+                    self.username.text = signedInUser!.username
+                    self.password.text = signedInUser!.password
+                    self.email.text = signedInUser!.email
+                    self.nameOfCard.text = signedInUser!.name
+                self.cardNumber.text = signedInUser!.bankInfo?.ccNumber
+                self.expDate.text = signedInUser!.bankInfo?.ccExpDate
+                self.cvv.text = signedInUser!.bankInfo?.cvv
+                
+                }
+        
+        
+        
     }
     
     @IBAction func back(_ sender: Any) {
