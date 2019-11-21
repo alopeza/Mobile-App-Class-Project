@@ -10,14 +10,13 @@ class DriverController: UIViewController {
 
     private let LocationManager = CLLocationManager()
     
-    @IBOutlet weak var clockOutButton: UIButton!
     @IBOutlet weak var clockInButton: UIButton!
     @IBOutlet weak var clockOutButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        LocationManager.delegate = self
+        LocationManager.delegate = self as? CLLocationManagerDelegate
         LocationManager.requestWhenInUseAuthorization()
         
         clockOutButton.isHidden = true;
@@ -26,11 +25,6 @@ class DriverController: UIViewController {
     
     @IBOutlet weak var DriverMapView: GMSMapView!
     
-    @IBAction func back(_ sender: Any) {
-        _ = navigationController?.popViewController(animated: true)
-    }
-
-   
     @IBAction func ClockIn(_ sender: Any) {
         clockInButton.isEnabled = false
         clockInButton.isHidden = true
@@ -58,9 +52,7 @@ class DriverController: UIViewController {
         _ = navigationController?.popToRootViewController(animated: true)
     }
 
- }*/
 }
-
 // MARK: - CLLocationManagerDelegate
 //1
 extension DriverController: CLLocationManagerDelegate {
