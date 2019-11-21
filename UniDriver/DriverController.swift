@@ -7,20 +7,31 @@ import UIKit
 
 class DriverController: UIViewController {
 
-    @IBOutlet weak var clockOutButton: UIButton!
+
     @IBOutlet weak var clockInButton: UIButton!
+    @IBOutlet weak var clockOutButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        clockOutButton.isHidden = true;
-        clockOutButton.isEnabled = false;
+        clockOutButton.isEnabled = false
+        clockOutButton.isHidden = true
+    
     }
 
-    @IBAction func back(_ sender: Any) {
-        _ = navigationController?.popViewController(animated: true)
+   
+    @IBAction func ClockIn(_ sender: Any) {
+        clockInButton.isEnabled = false
+        clockInButton.isHidden = true
+        clockOutButton.isEnabled = true
+        clockOutButton.isHidden = false
     }
-
-    /*
+    
+    @IBAction func ClockOut(_ sender: Any) {
+        clockInButton.isEnabled = true
+        clockInButton.isHidden = false
+        clockOutButton.isEnabled = false
+        clockOutButton.isHidden = true
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -29,14 +40,8 @@ class DriverController: UIViewController {
         // Pass the selected object to the new view controller.
     }
 
-    @IBAction func ClockOut(_ sender: Any) {
-        clockInButton.isHidden = false;
-        clockInButton.isEnabled = true;
-        clockOutButton.isHidden = true;
-        clockOutButton.isEnabled = false;
-    }
-
-
+   
+    
     @IBAction func back(_ sender: Any) {
         _ = navigationController?.popToRootViewController(animated: true)
     }
