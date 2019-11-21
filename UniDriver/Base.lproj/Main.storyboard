@@ -594,15 +594,15 @@
             </objects>
             <point key="canvasLocation" x="2003" y="118"/>
         </scene>
-        <!--View Controller-->
+        <!--Find Driver Controller-->
         <scene sceneID="L3O-nm-gaA">
             <objects>
-                <viewController id="Dbb-H8-3SS" sceneMemberID="viewController">
+                <viewController id="Dbb-H8-3SS" customClass="FindDriverController" customModule="UniDriver" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vEM-FG-0de">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="finding-drivers-popup-bg" translatesAutoresizingMaskIntoConstraints="NO" id="hBQ-FP-0Ip">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg-find-drivers" translatesAutoresizingMaskIntoConstraints="NO" id="hBQ-FP-0Ip">
                                 <rect key="frame" x="13" y="345" width="389" height="207"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -610,10 +610,23 @@
                                 <rect key="frame" x="53" y="451" width="308" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Cancel-button"/>
+                                <connections>
+                                    <action selector="back:" destination="Dbb-H8-3SS" eventType="touchUpInside" id="5zs-6U-Ibl"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Finding Drivers ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8HL-t4-8VH">
+                                <rect key="frame" x="101" y="391" width="212" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Gibson-SemiBold" family="Gibson" pointSize="26"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CCf-65-Iaj"/>
                     </view>
+                    <connections>
+                        <outlet property="findDriverLabel" destination="8HL-t4-8VH" id="AoU-aE-5od"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QAt-ye-tm5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -685,17 +698,17 @@
         <image name="Cancel-button" width="308" height="57"/>
         <image name="Current-and-Destination" width="426" height="195"/>
         <image name="ROUTE" width="308" height="57"/>
+        <image name="bg-find-drivers" width="362" height="162"/>
         <image name="bg_find_driver" width="414" height="159"/>
         <image name="button" width="362" height="57"/>
         <image name="clock-in" width="231" height="57"/>
         <image name="clock-out" width="231" height="57"/>
-        <image name="finding-drivers-popup-bg" width="362" height="162"/>
         <image name="registerButton" width="361" height="57"/>
         <image name="signInButton" width="361" height="57"/>
         <image name="union" width="18" height="15"/>
         <image name="west_porch001-b" width="1600" height="900"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7in-ZB-XIV"/>
+        <segue reference="Wem-Fv-1h9"/>
     </inferredMetricsTieBreakers>
 </document>
