@@ -43,15 +43,14 @@ class UniDataController{
         self.Save(user: newUser)
     }
     
-    func getUser(userName: String) -> UniUser? {
+    func getUser(userName: String, completition: @escaping (UniUser?) -> Void) -> Void {
         var returnUser:UniUser?
         
-            self.userDB.queryOrdered(byChild: "username").queryEqual(toValue: userName).observeSingleEvent(of: .value, with: {snapshot in
-//            if let user = snapshot.value as? [String: AnyObject] {
-//            }
+        self.userDB.queryOrdered(byChild: "username").queryEqual(toValue: userName).observeSingleEvent(of: .value, with: {snapshot in
             returnUser = UniUser(snapshot: snapshot, lookupKey: userName)!
+            completition(returnUser)
         })
         
-        return returnUser
+//        return returnUser
     }
 }
