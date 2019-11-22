@@ -25,12 +25,16 @@ class DriverSignUpController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        //tapping anywhere on the screen will dismiss the keyboard
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
     }
     
     
     @IBAction func signUp(_ sender: Any) {
         //check if all fields are filled out
-        if (username == nil || password == nil || email == nil || carMake == nil || carModel == nil || colorOfCar.text == nil || licensePlate.text == nil || name.text == nil || routingNumber.text == nil || bankAccountNumber.text == nil || hourlyRate == nil) {
+        if (username.text == "Username" || password.text == "Password" || email.text == "Email" || carMake.text == "Car Make" || carModel.text == "Car Model" || colorOfCar.text == "Color" || licensePlate.text == "License Plate #" || name.text == "Name on Bank Account" || routingNumber.text == "Routing Number" || bankAccountNumber.text == "Bank Account #" || hourlyRate.text == "Hourly Rate") {
             
             //alert user to enter all information
             let okay = UIAlertAction(title: "Okay", style: .default, handler: nil)

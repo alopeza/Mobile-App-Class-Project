@@ -21,12 +21,15 @@ class RiderSignUpController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
+        
+        //tapping anywhere on the screen will dismiss the keyboard
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)    }
     
     
     @IBAction func signUp(_ sender: Any) {
         //check if any fields are empty
-        if username.text == nil || password.text == nil || email.text == nil || nameOfCard.text == nil || cardNumber.text == nil || expDate.text == nil || cvv.text == nil {
+        if username.text == "Username" || password.text == "Password" || email.text == "Email" || nameOfCard.text == "Name on Credit Card" || cardNumber.text == "Credit Card #" || expDate.text == "Expiration Date" || cvv.text == "CVV" {
             
             //alert user to enter all information
             let okay = UIAlertAction(title: "Okay", style: .default, handler: nil)
