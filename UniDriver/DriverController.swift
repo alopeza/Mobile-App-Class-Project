@@ -9,6 +9,8 @@ import GoogleMaps
 class DriverController: UIViewController {
 
     private let LocationManager = CLLocationManager()
+    var controller = UniDataController()
+    var signedInUser: UniUser?
     
     @IBOutlet weak var clockInButton: UIButton!
     @IBOutlet weak var clockOutButton: UIButton!

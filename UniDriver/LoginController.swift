@@ -11,6 +11,8 @@ class LoginController: UIViewController {
 
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
+    let controller = UniDataController()
+    var signedInUser: UniUser?
     
     //var ref: DatabaseReference!
     
@@ -24,20 +26,18 @@ class LoginController: UIViewController {
     
     @IBAction func SignIn(_ sender: Any) {
         
-        let controller = UniDataController()
-        var signedInUser: UniUser?
         
         //query database
         controller.getUser(userName: username.text!) { currUser in
-            signedInUser = currUser
+            self.signedInUser = currUser
             
             
-            if signedInUser != nil { //if the user exists
+            if self.signedInUser != nil { //if the user exists
                 
                 //password is correct
-                if signedInUser?.password == self.password.text! {
+                if self.signedInUser?.password == self.password.text! {
                     //perform rider segue
-                    if signedInUser?.userType == .Rider {
+                    if self.signedInUser?.userType == .Rider {
                     self.performSegue(withIdentifier: "riderSignIn", sender: self.password)
                     }
                     //perform driver segue
@@ -71,6 +71,23 @@ class LoginController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //pass either username or ref here for successfulsignin segue only
+        if self.signedInUser?.userType == .Rider {
+            let destinationVC = segue.destination as! RiderController
+            destinationVC.controller = controller
+            destinationVC.signedInUser = signedInUser
+        
+        }
+        //perform driver segue
+        else {
+            
+            let destinationVC = segue.destination as! DriverController
+            destinationVC.controller = controller
+            destinationVC.signedInUser = signedInUser
+           
+        }
+        
+        
+        
     }
     
     /*
