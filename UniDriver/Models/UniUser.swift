@@ -61,6 +61,16 @@ class UniUser{
             return nil
         }
         
+        
+        if let bankInfoArray = value["bankInfo"] as? NSMutableArray,
+            let bankInfo = bankInfoArray[0] as? [String: AnyObject] {
+            self.bankInfo?.bankAccountNumber = bankInfo["bankAccountNumber"] as? String
+            self.bankInfo?.bankRoutingNumber = bankInfo["bankRoutingNumber"] as? String
+            self.bankInfo?.ccExpDate = bankInfo["ccExpDate"] as? String
+            self.bankInfo?.ccNumber = bankInfo["ccNumber"] as? String
+            self.bankInfo?.cvv = bankInfo["cvv"] as? String
+        }
+        
         self.ref = snapshot.ref
         self.key = snapshot.key
         self.email = email
@@ -126,10 +136,12 @@ class UniUser{
 //        }
 //    }
     
-    /*func getUser(username: String) -> UniUser{
-        let user = ref.child("uni-user").queryEqual(toValue: "cookr")
+    func getBankInfo(userInfo: [String: AnyObject]) -> FinancialInfo? {
+        var returnBank = FinancialInfo()
         
-        return user
-    }*/
+        
+        
+        return returnBank
+    }
 
 }
