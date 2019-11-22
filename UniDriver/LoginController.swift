@@ -36,8 +36,14 @@ class LoginController: UIViewController {
                 
                 //password is correct
                 if signedInUser?.password == self.password.text! {
-                    //perform segue and pass either username or reference
-                    self.performSegue(withIdentifier: "SuccessfulSignIn", sender: self.password)
+                    //perform rider segue
+                    if signedInUser?.userType == .Rider {
+                    self.performSegue(withIdentifier: "riderSignIn", sender: self.password)
+                    }
+                    //perform driver segue
+                    else {
+                        self.performSegue(withIdentifier: "driverSignIn", sender: self.password)
+                    }
                 }
                     //password incorrect, present alert
                 else {
