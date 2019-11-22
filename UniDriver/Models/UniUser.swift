@@ -68,6 +68,40 @@ class UniUser{
         self.password = password
         self.name = name
         self.userType = UserType(rawValue: userType)!
+        
+        //load bank info
+        if let bankInfoArray = value["bankInfo"] as? NSMutableArray,
+            let bankInfo = bankInfoArray[0] as? [String: AnyObject] {
+            self.bankInfo = FinancialInfo()
+            self.bankInfo?.bankAccountNumber = bankInfo["bankAccountNumber"] as? String
+            self.bankInfo?.bankRoutingNumber = bankInfo["bankRoutingNumber"] as? String
+            self.bankInfo?.ccExpDate = bankInfo["ccExpDate"] as? String
+            self.bankInfo?.ccNumber = bankInfo["ccNumber"] as? String
+            self.bankInfo?.cvv = bankInfo["cvv"] as? String
+        }
+        
+        //load car info
+        if let carInfoArray = value["car"] as? NSMutableArray,
+            let carInfo = carInfoArray[0] as? [String: AnyObject]{
+            self.car = Vehicle()
+            self.car?.color = carInfo["color"] as? String
+            self.car?.licensePlate = carInfo["licensePlate"] as? String
+            self.car?.make = carInfo["make"] as? String
+            self.car?.model = carInfo["model"] as? String
+        }
+        
+        //load location info
+        if let locationInfoArray = value["location"] as? NSMutableArray,
+            let locationInfo = locationInfoArray[0] as? [String: AnyObject],
+            let lat = Double(locationInfo["latitude"] as! String),
+            let long = Double(locationInfo["longitude"] as! String) {
+            self.currentLocation = Location(latitude: lat, longitude: long)
+        }
+        
+        //load trip info
+        
+        //load previous trip array info
+
     }
     
     func toAnyObject() -> Any{
@@ -126,10 +160,12 @@ class UniUser{
 //        }
 //    }
     
-    /*func getUser(username: String) -> UniUser{
-        let user = ref.child("uni-user").queryEqual(toValue: "cookr")
+    func getBankInfo(userInfo: [String: AnyObject]) -> FinancialInfo? {
+        var returnBank = FinancialInfo()
         
-        return user
-    }*/
+        
+        
+        return returnBank
+    }
 
 }
