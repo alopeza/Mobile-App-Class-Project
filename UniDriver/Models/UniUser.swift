@@ -35,6 +35,7 @@ class UniUser{
     var car: Vehicle?
     var bankInfo: FinancialInfo?
     var driverFare: Double?
+    var isLoggedIn = false
     
     init (username: String, password: String, name: String, email: String, userType: UserType){
         self.username = username
@@ -69,6 +70,11 @@ class UniUser{
         self.password = password
         self.name = name
         self.userType = UserType(rawValue: userType)!
+        self.isLoggedIn = false
+        
+        if let isLoggedIn = value["isLoggedIn"] as? String{
+            if isLoggedIn == "true" {self.isLoggedIn = true}
+        }
         
         //load bank info
         if let bankInfoArray = value["bankInfo"] as? NSMutableArray,
@@ -123,7 +129,12 @@ class UniUser{
         self.password = password
         self.name = name
         self.userType = UserType(rawValue: userType)!
+        self.isLoggedIn = false
         
+        if let isLoggedIn = value["isLoggedIn"] as? String{
+            if isLoggedIn == "true" {self.isLoggedIn = true}
+        }
+
         //load bank info
         if let bankInfoArray = value["bankInfo"] as? NSMutableArray,
             let bankInfo = bankInfoArray[0] as? [String: AnyObject] {
@@ -171,7 +182,8 @@ class UniUser{
             "location":[currentLocation?.toAnyObject()],
             "car":[car?.toAnyObject()],
             "bankInfo":[bankInfo?.toAnyObject()],
-            "currentTrip":[currentTrip?.toAnyObject()]
+            "currentTrip":[currentTrip?.toAnyObject()],
+            "isLoggedIn": isLoggedIn.description
         ]
     }
     
