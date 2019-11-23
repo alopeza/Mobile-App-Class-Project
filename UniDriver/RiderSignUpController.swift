@@ -21,11 +21,25 @@ class RiderSignUpController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
+        
+        //tapping anywhere on the screen will dismiss the keyboard
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)    }
     
     
     @IBAction func signUp(_ sender: Any) {
-        
+        //check if any fields are empty
+        if username.text == "Username" || password.text == "Password" || email.text == "Email" || nameOfCard.text == "Name on Credit Card" || cardNumber.text == "Credit Card #" || expDate.text == "Expiration Date" || cvv.text == "CVV" {
+            
+            //alert user to enter all information
+            let okay = UIAlertAction(title: "Okay", style: .default, handler: nil)
+            let emptyField = UIAlertController(title: "Empty Field", message: "There is an empty field. Please enter all required information.", preferredStyle: .alert)
+            emptyField.addAction(okay)
+            present(emptyField, animated: true, completion: nil)
+            
+        }
+        //all fields are filled out
+        else {
         //create new user account
         let newRider = UniUser(username: username.text!, password: password.text!, name: nameOfCard.text!, email: email.text!, userType: .Rider)
         newRider.setCCInfo(ccNumber: cardNumber.text!, ccExpDate: expDate.text!, cvv: cvv.text!)
@@ -56,7 +70,7 @@ class RiderSignUpController: UIViewController {
             userTaken.addAction(okay)
             present(userTaken, animated: true, completion: nil)
         }
-        
+        }
         
         
     }

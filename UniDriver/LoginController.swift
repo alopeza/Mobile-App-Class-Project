@@ -11,6 +11,8 @@ class LoginController: UIViewController {
 
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
+    let controller = UniDataController()
+    var signedInUser: UniUser?
     
     //var ref: DatabaseReference!
     
@@ -23,45 +25,42 @@ class LoginController: UIViewController {
     }
     
     @IBAction func SignIn(_ sender: Any) {
-       
-
         
-        let controller = UniDataController()
-        var signedInUser: UniUser?
         
         //query database
         controller.getUser(userName: username.text!) { currUser in
-            signedInUser = currUser
-        }
-        
-        //ref = Database.database().reference(withPath: "UniUser")
-        //ref.queryOrdered(byChild: "username").queryEqual(toValue: username)
-        
-        if signedInUser != nil { //if the user exists
+            self.signedInUser = currUser
             
-            //password is correct
-            if signedInUser!.password == password.text! {
-                //perform segue and pass either username or reference
-                performSegue(withIdentifier: "SuccessfulSignIn", sender: password)
-            }
+            
+            if self.signedInUser != nil { //if the user exists
                 
-            //password incorrect, present alert
+                //password is correct
+                if self.signedInUser?.password == self.password.text! {
+                    //perform rider segue
+                    if self.signedInUser?.userType == .Rider {
+                    self.performSegue(withIdentifier: "riderSignIn", sender: self.password)
+                    }
+                    //perform driver segue
+                    else {
+                        self.performSegue(withIdentifier: "driverSignIn", sender: self.password)
+                    }
+                }
+                    //password incorrect, present alert
+                else {
+                    let okay = UIAlertAction(title: "Okay", style: .default, handler: nil)
+                    let tryAgain = UIAlertController(title: "Incorrect Password", message: "The password was incorrect. Please try again.", preferredStyle: .alert)
+                    tryAgain.addAction(okay)
+                    self.present(tryAgain, animated: true, completion: nil)
+                }
+            }
+                //username does not exist, present alert
             else {
                 let okay = UIAlertAction(title: "Okay", style: .default, handler: nil)
-                let tryAgain = UIAlertController(title: "Incorrect Password", message: "The password was incorrect. Please try again.", preferredStyle: .alert)
+                let tryAgain = UIAlertController(title: "Invalid Username", message: "The username was incorrect. Please try again or create a new account.", preferredStyle: .alert)
                 tryAgain.addAction(okay)
-                present(tryAgain, animated: true, completion: nil)            }
+                self.present(tryAgain, animated: true, completion: nil)
+            }
         }
-
-        
-        //username does not exist, present alert
-        else {
-            let okay = UIAlertAction(title: "Okay", style: .default, handler: nil)
-            let tryAgain = UIAlertController(title: "Invalid Username", message: "The username was incorrect. Please try again or create a new account.", preferredStyle: .alert)
-            tryAgain.addAction(okay)
-            present(tryAgain, animated: true, completion: nil)
-        }
-        
     }
     
     
@@ -72,6 +71,23 @@ class LoginController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //pass either username or ref here for successfulsignin segue only
+        if self.signedInUser?.userType == .Rider {
+            let destinationVC = segue.destination as! RiderController
+            destinationVC.controller = controller
+            destinationVC.signedInUser = signedInUser
+        
+        }
+        //perform driver segue
+        else {
+            
+            let destinationVC = segue.destination as! DriverController
+            destinationVC.controller = controller
+            destinationVC.signedInUser = signedInUser
+           
+        }
+        
+        
+        
     }
     
     /*
