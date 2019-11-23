@@ -394,7 +394,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="TPe-jf-eLH">
+                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="TPe-jf-eLH">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button" translatesAutoresizingMaskIntoConstraints="NO" id="vrL-Mx-eHA">
@@ -598,6 +598,7 @@
                                     <constraint firstItem="Ljy-dN-ZUZ" firstAttribute="leading" secondItem="Fhs-s9-0V5" secondAttribute="leading" constant="26" id="JPe-uq-bfd"/>
                                     <constraint firstItem="sSs-P6-Ooa" firstAttribute="top" secondItem="67Z-hv-8Zs" secondAttribute="bottom" constant="20" id="KKv-XW-BEo"/>
                                     <constraint firstItem="jsK-Sg-ALO" firstAttribute="top" secondItem="Nrx-Kv-EEJ" secondAttribute="bottom" constant="20" id="KfF-hJ-ZXi"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ngx-Zs-zAI" secondAttribute="trailing" constant="27" id="LiN-wh-tbi"/>
                                     <constraint firstItem="Fhs-s9-0V5" firstAttribute="trailing" secondItem="WF2-dF-wo7" secondAttribute="trailing" constant="42" id="LlX-0J-m5i"/>
                                     <constraint firstItem="Fhs-s9-0V5" firstAttribute="trailing" secondItem="Ukh-PF-PXW" secondAttribute="trailing" constant="27" id="NHP-ty-fUW"/>
                                     <constraint firstItem="ScZ-d5-6Ro" firstAttribute="leading" secondItem="Fhs-s9-0V5" secondAttribute="leading" constant="26" id="Pcd-kB-PU1"/>
@@ -629,6 +630,7 @@
                                     <constraint firstItem="67Z-hv-8Zs" firstAttribute="leading" secondItem="Fhs-s9-0V5" secondAttribute="leading" constant="26" id="irN-OM-r8p"/>
                                     <constraint firstItem="Ljy-dN-ZUZ" firstAttribute="top" secondItem="9rU-U9-cgD" secondAttribute="bottom" constant="8" id="j41-tJ-eU5"/>
                                     <constraint firstItem="Fhs-s9-0V5" firstAttribute="trailing" secondItem="BfG-ik-9yP" secondAttribute="trailing" constant="27" id="jnd-Ps-lcr"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ljy-dN-ZUZ" secondAttribute="bottom" constant="-6" id="kGk-WC-qdn"/>
                                     <constraint firstItem="Fhs-s9-0V5" firstAttribute="trailing" secondItem="Ngh-Vm-BF9" secondAttribute="trailing" constant="27" id="lMu-N0-B3A"/>
                                     <constraint firstItem="sJO-cN-LCP" firstAttribute="top" secondItem="vrL-Mx-eHA" secondAttribute="bottom" constant="19" id="lkg-0L-nYo"/>
                                     <constraint firstItem="RY6-jp-Ln4" firstAttribute="top" secondItem="Ngh-Vm-BF9" secondAttribute="bottom" constant="19" id="nSl-ge-BuL"/>
