@@ -42,11 +42,19 @@ class DriverController: UIViewController {
         clockOutButton.isHidden = true
     }
     // MARK: - Navigation
-
+    @IBAction func AccountInfo(_ sender: Any) {
+         self.performSegue(withIdentifier: "DiverAccount", sender: self)
+    }
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "DiverAccount" {
+            let destinationVC = segue.destination as! DriverAccountController
+            destinationVC.controller = controller
+            destinationVC.signedInUser = signedInUser
+        }
     }
 
    
