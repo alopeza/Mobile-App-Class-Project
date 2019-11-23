@@ -30,12 +30,12 @@ class RiderController: UIViewController {
         _ = navigationController?.popViewController(animated: true)
     }
 
-    @IBAction func FindDriver(_ sender: Any) {
-
-    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        let destinationVC = segue.destination as! FindDriverController
+        destinationVC.controller = controller
+        destinationVC.signedInUser = signedInUser
     }
    
 }
