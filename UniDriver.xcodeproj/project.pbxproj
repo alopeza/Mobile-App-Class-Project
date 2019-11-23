@@ -226,10 +226,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D42B916235ACC5E004092F9 /* LaunchScreen.storyboard in Resources */,
-				9D547329237A4BB800BDB3E3 /* Gibson.ttf in Resources */,
 				9D42B913235ACC5E004092F9 /* Assets.xcassets in Resources */,
-				9D54732A237A4BBB00BDB3E3 /* Gibson-SemiBold.ttf in Resources */,
 				9D42B911235ACC5D004092F9 /* Main.storyboard in Resources */,
+				9D54732A237A4BBB00BDB3E3 /* Gibson-SemiBold.ttf in Resources */,
+				9D547329237A4BB800BDB3E3 /* Gibson.ttf in Resources */,
 				9D547328237A4BB500BDB3E3 /* Gibson-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

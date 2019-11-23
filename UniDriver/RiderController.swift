@@ -18,12 +18,16 @@ class RiderController: UIViewController {
     
     @IBOutlet weak var pickUpLocation: UITextField!
     @IBOutlet weak var dropOffLocation: UITextField!
-
+    @IBOutlet weak var gView: GMSMapView!
+    
     @IBOutlet weak var RiderMapView: GMSMapView!
     override func viewDidLoad() {
+        super.viewDidLoad()
         LocationManager.delegate = self as? CLLocationManagerDelegate
         LocationManager.requestWhenInUseAuthorization()
-        super.viewDidLoad()
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        gView.addGestureRecognizer(tap)
+        
     }
 
     @IBAction func back(_ sender: Any) {
