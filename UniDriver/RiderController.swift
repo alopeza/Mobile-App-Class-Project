@@ -35,11 +35,21 @@ class RiderController: UIViewController {
     }
 
     
+    @IBAction func AccountInfo(_ sender: Any) {
+        self.performSegue(withIdentifier: "RiderAccount", sender: self)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! FindDriverController
-        destinationVC.controller = controller
-        destinationVC.signedInUser = signedInUser
+        if segue.identifier == "RiderAccount" {
+            let destinationVC = segue.destination as! RiderAccountController
+            destinationVC.controller = controller
+            destinationVC.signedInUser = signedInUser
+        }
+        else {
+            let destinationVC = segue.destination as! FindDriverController
+            destinationVC.controller = controller
+            destinationVC.signedInUser = signedInUser
+        }
     }
    
 }

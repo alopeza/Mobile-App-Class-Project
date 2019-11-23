@@ -866,7 +866,7 @@
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="NbE-Jx-xL5">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QLt-wq-k8q">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QLt-wq-k8q">
                                 <rect key="frame" x="296" y="6" width="98" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Gibson-SemiBold" family="Gibson" pointSize="17"/>
@@ -874,7 +874,8 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Nkw-DX-16V" kind="show" id="NuD-Dj-deE"/>
+                                    <action selector="AccountInfo:" destination="rLX-LU-iHF" eventType="touchUpInside" id="Q66-eO-skb"/>
+                                    <segue destination="Nkw-DX-16V" kind="show" identifier="RiderAccount" id="NuD-Dj-deE"/>
                                 </connections>
                             </button>
                         </barButtonItem>
