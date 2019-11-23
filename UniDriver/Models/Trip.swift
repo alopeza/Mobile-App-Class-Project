@@ -9,17 +9,21 @@
 import Foundation
 
 class Trip{
-    var tripDate: Date
+    var tripStartDate: Date
+    var tripEndDate: Date
     var startLocation: Location
     var destination: Location
     var fare: Double
+    var tripCost: Double
     
     func toAnyObject() -> Any{
         return [
-            "tripDate": tripDate.description,
+            "tripStartDate": tripStartDate.description,
+            "tripEndDate": tripEndDate.description,
             "startLocation": [startLocation.toAnyObject()],
             "destination": [destination.toAnyObject()],
-            "fare": fare.description
+            "fare": fare.description,
+            "tripCost": tripCost.description
         ]
     }
     
@@ -27,7 +31,9 @@ class Trip{
         self.startLocation = Location()
         self.destination = Location()
         self.fare = 0.00
-        self.tripDate = Date()
+        self.tripStartDate = Date()
+        self.tripEndDate = Date()
+        self.tripCost = 0.00
     }
     
 }

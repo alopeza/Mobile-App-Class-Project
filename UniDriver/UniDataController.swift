@@ -68,4 +68,22 @@ class UniDataController{
             completition(driverList)
         })
     }
+    
+    func startTrip(user: UniUser, start: Location, destination: Location, fare: Double){
+        user.currentTrip = Trip()
+        user.currentTrip?.startLocation = start
+        user.currentTrip?.destination = destination
+        user.currentTrip?.fare = fare
+        user.currentTrip?.tripStartDate = Date()
+        user.currentTrip?.tripEndDate = Date()
+        user.currentTrip?.tripCost = 0.00
+    }
+    
+    func endTrip(user: UniUser) {
+        user.currentTrip?.tripEndDate = Date()
+        let intervalSeconds = user.currentTrip?.tripEndDate.timeIntervalSince(user.currentTrip!.tripStartDate)
+        let seconds = Double(intervalSeconds!)
+        let totalCost = (user.currentTrip!.fare) * (seconds / 60 / 60)
+        user.currentTrip?.tripCost = totalCost
+    }
 }
