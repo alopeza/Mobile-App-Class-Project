@@ -24,8 +24,7 @@ class DriverController: UIViewController {
         clockOutButton.isHidden = true;
         clockOutButton.isEnabled = false;
         
-        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
-        view.addGestureRecognizer(tap)
+        
     }
     @IBOutlet weak var DriverMapView: GMSMapView!
     
