@@ -19,7 +19,8 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+            view.addGestureRecognizer(tap)
 
         // Do any additional setup after loading the view.
     }
@@ -78,12 +79,14 @@ class LoginController: UIViewController {
         
         }
         //perform driver segue
-        else {
+        else if self.signedInUser?.userType == .Driver {
             
             let destinationVC = segue.destination as! DriverController
             destinationVC.controller = controller
             destinationVC.signedInUser = signedInUser
            
+        } else {
+            
         }
         
         

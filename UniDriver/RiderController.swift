@@ -18,24 +18,28 @@ class RiderController: UIViewController {
     
     @IBOutlet weak var pickUpLocation: UITextField!
     @IBOutlet weak var dropOffLocation: UITextField!
-
+    @IBOutlet weak var gView: GMSMapView!
+    
     @IBOutlet weak var RiderMapView: GMSMapView!
     override func viewDidLoad() {
+        super.viewDidLoad()
         LocationManager.delegate = self as? CLLocationManagerDelegate
         LocationManager.requestWhenInUseAuthorization()
-        super.viewDidLoad()
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        gView.addGestureRecognizer(tap)
+        
     }
 
     @IBAction func back(_ sender: Any) {
         _ = navigationController?.popViewController(animated: true)
     }
 
-    @IBAction func FindDriver(_ sender: Any) {
-
-    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        let destinationVC = segue.destination as! FindDriverController
+        destinationVC.controller = controller
+        destinationVC.signedInUser = signedInUser
     }
    
 }

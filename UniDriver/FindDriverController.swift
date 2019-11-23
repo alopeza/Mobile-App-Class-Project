@@ -10,16 +10,28 @@ import UIKit
 
 class FindDriverController: UIViewController {
     
-    @IBOutlet weak var findDriverLabel: UILabel!
+   var controller = UniDataController()
+   var signedInUser: UniUser?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
     
+   
     @IBAction func back(_ sender: Any) {
-        _ = navigationController?.popViewController(animated: true)
+         _ = navigationController?.popViewController(animated: true)
     }
     
-
+    
+    @IBAction func findDrivers(_ sender: Any) {
+        controller.getDriveList(){
+            list in
+            print("numbers of drivers " + String(list.count))
+        }
+    }
+    
+    
+    
+    
 }
