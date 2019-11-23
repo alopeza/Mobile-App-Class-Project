@@ -1014,7 +1014,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Account Info"/>
                                 <connections>
-                                    <segue destination="PAG-vr-8WC" kind="show" id="ddO-14-Tg6"/>
+                                    <action selector="AccountInfo:" destination="Pkl-XM-IM7" eventType="touchUpInside" id="yHI-Kd-pOt"/>
+                                    <segue destination="PAG-vr-8WC" kind="show" identifier="DiverAccount" id="ddO-14-Tg6"/>
                                 </connections>
                             </button>
                         </barButtonItem>

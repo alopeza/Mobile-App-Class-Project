@@ -10,6 +10,9 @@ import UIKit
 
 class DriverAccountController: UIViewController {
     
+    var controller = UniDataController()
+    var signedInUser: UniUser?
+    
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var email: UITextField!
@@ -26,6 +29,20 @@ class DriverAccountController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        controller.getUser(userName: signedInUser!.username) { currUser in
+            self.signedInUser = currUser
+            self.username.text = self.signedInUser!.username
+            self.password.text = self.signedInUser!.password
+            self.email.text = self.signedInUser!.email
+            self.carMake.text = self.signedInUser!.car?.make
+            self.carModel.text = self.signedInUser!.car?.model
+            self.colorOfCar.text = self.signedInUser!.car?.color
+            self.licensePlate.text = self.signedInUser!.car?.licensePlate
+            self.name.text = self.signedInUser!.name
+            self.routingNumber.text = self.signedInUser!.bankInfo?.bankRoutingNumber
+            self.bankAccountNumber.text = self.signedInUser!.bankInfo?.bankAccountNumber
+            self.hourlyRate.text = (self.signedInUser!.driverFare)?.description
+        }
     }
     
     @IBAction func back(_ sender: Any) {
