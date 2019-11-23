@@ -48,6 +48,7 @@ class UniUser{
         ref.child(key).setValue(self)*/
     }
     
+
     init?(snapshot: DataSnapshot, lookupKey: String) {
         guard
             let topValue = snapshot.value as? [String: AnyObject],
@@ -104,6 +105,60 @@ class UniUser{
 
     }
     
+    init?(value: [String: AnyObject], ref: DatabaseReference?, key: String) {
+        guard
+            let email = value["email"] as? String,
+            let username = value["username"] as? String,
+            let password = value["password"] as? String,
+            let name = value["name"] as? String,
+            let userType = value["userType"] as? String
+            else {
+            return nil
+        }
+        
+        self.ref = ref
+        self.key = key
+        self.email = email
+        self.username = username
+        self.password = password
+        self.name = name
+        self.userType = UserType(rawValue: userType)!
+        
+        //load bank info
+        if let bankInfoArray = value["bankInfo"] as? NSMutableArray,
+            let bankInfo = bankInfoArray[0] as? [String: AnyObject] {
+            self.bankInfo = FinancialInfo()
+            self.bankInfo?.bankAccountNumber = bankInfo["bankAccountNumber"] as? String
+            self.bankInfo?.bankRoutingNumber = bankInfo["bankRoutingNumber"] as? String
+            self.bankInfo?.ccExpDate = bankInfo["ccExpDate"] as? String
+            self.bankInfo?.ccNumber = bankInfo["ccNumber"] as? String
+            self.bankInfo?.cvv = bankInfo["cvv"] as? String
+        }
+        
+        //load car info
+        if let carInfoArray = value["car"] as? NSMutableArray,
+            let carInfo = carInfoArray[0] as? [String: AnyObject]{
+            self.car = Vehicle()
+            self.car?.color = carInfo["color"] as? String
+            self.car?.licensePlate = carInfo["licensePlate"] as? String
+            self.car?.make = carInfo["make"] as? String
+            self.car?.model = carInfo["model"] as? String
+        }
+        
+        //load location info
+        if let locationInfoArray = value["location"] as? NSMutableArray,
+            let locationInfo = locationInfoArray[0] as? [String: AnyObject],
+            let lat = Double(locationInfo["latitude"] as! String),
+            let long = Double(locationInfo["longitude"] as! String) {
+            self.currentLocation = Location(latitude: lat, longitude: long)
+        }
+        
+        //load trip info
+        
+        //load previous trip array info
+
+    }
+
     func toAnyObject() -> Any{
         
         return [

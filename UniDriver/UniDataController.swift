@@ -47,10 +47,25 @@ class UniDataController{
         var returnUser:UniUser?
         
         self.userDB.queryOrdered(byChild: "username").queryEqual(toValue: userName).observeSingleEvent(of: .value, with: {snapshot in
-            returnUser = UniUser(snapshot: snapshot, lookupKey: userName)!
+            returnUser = UniUser(snapshot: snapshot, lookupKey: userName)
             completition(returnUser)
         })
+    }
+    
+    func getDriveList(completition: @escaping ([UniUser?]) -> Void) -> Void {
+        var driverList = [UniUser?]()
         
-//        return returnUser
+        self.userDB.queryOrdered(byChild: "userType").queryEqual(toValue: "Driver").observe(.value, with: {snapshot in
+            let driverDict = snapshot.value as? [String: AnyObject]
+            if let driverDict = driverDict {
+                for driver in driverDict {
+                    let driverValues = driver.value as? [String: AnyObject]
+                    let addDriver = UniUser(value: driverValues!, ref: snapshot.ref, key: "")
+                    driverList.append(addDriver)
+                }
+            }
+            
+            completition(driverList)
+        })
     }
 }
