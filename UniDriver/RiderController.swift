@@ -10,31 +10,39 @@ import GoogleMaps
 class RiderController: UIViewController, UITextFieldDelegate {
     
     
-
+    //MARK: - Variables and Outlets
     private let LocationManager = CLLocationManager()
-
     var controller = UniDataController()
     var signedInUser: UniUser?
-    
     @IBOutlet weak var pickUpLocation: UITextField!
     @IBOutlet weak var dropOffLocation: UITextField!
-    
-    
     @IBOutlet weak var RiderMapView: GMSMapView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        LocationManager.delegate = self as? CLLocationManagerDelegate
+        LocationManager.delegate = self
         LocationManager.requestWhenInUseAuthorization()
         pickUpLocation.delegate = self
         dropOffLocation.delegate = self
         
     }
     
+    @IBAction func unwindToRider(_ sender: UIStoryboardSegue){
+        NoDrivers(self)
+    }
+    
+    
+    // MARK: - KeyBoard
+    
     func textFieldShouldReturn(_ scoreText: UITextField) -> Bool {
         self.view.endEditing(true)
         return true
     }
 
+    // MARK: - Navigation
+    
     @IBAction func back(_ sender: Any) {
         _ = navigationController?.popViewController(animated: true)
     }
@@ -47,6 +55,10 @@ class RiderController: UIViewController, UITextFieldDelegate {
         self.performSegue(withIdentifier: "RiderAccount", sender: self)
     }
     
+    func NoDrivers(_ sender: Any){
+        self.performSegue(withIdentifier: "NoDriver", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "RiderAccount" {
             let destinationVC = segue.destination as! RiderAccountController
@@ -57,7 +69,7 @@ class RiderController: UIViewController, UITextFieldDelegate {
             let destinationVC = segue.destination as! FindDriverController
             destinationVC.controller = controller
             destinationVC.signedInUser = signedInUser
-        }
+        } 
     }
    
 }
