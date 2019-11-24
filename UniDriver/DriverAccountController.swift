@@ -27,7 +27,8 @@ class DriverAccountController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
         controller.getUser(userName: signedInUser!.username) { currUser in
             self.signedInUser = currUser
@@ -49,6 +50,31 @@ class DriverAccountController: UIViewController {
         _ = navigationController?.popViewController(animated: true)
     }
 
+    @IBAction func Save(_ sender: Any) {
+        if (username.text == "Username" || password.text == "Password" || email.text == "Email" || carMake.text == "Car Make" || carModel.text == "Car Model" || colorOfCar.text == "Color" || licensePlate.text == "License Plate #" || name.text == "Name on Bank Account" || routingNumber.text == "Routing Number" || bankAccountNumber.text == "Bank Account #" || hourlyRate.text == "Hourly Rate") {
+            
+            //alert user to enter all information
+            let okay = UIAlertAction(title: "Okay", style: .default, handler: nil)
+            let emptyField = UIAlertController(title: "Empty Field", message: "There is an empty field. Please enter all required information.", preferredStyle: .alert)
+            emptyField.addAction(okay)
+            present(emptyField, animated: true, completion: nil)
+            
+        }
+        else {
+            //create new user account
+            let UpdateDriver = UniUser(username: username.text!, password: password.text!, name: name.text!, email: email.text!, userType: .Driver)
+            UpdateDriver.setVehicle(make: carMake.text!, model: carModel.text!, color: colorOfCar.text!, licensePlate: licensePlate.text!)
+            let fare = Double(hourlyRate.text!)!
+            UpdateDriver.setFare(fare: fare)
+            UpdateDriver.setBankInfo(bankAccountNumber: bankAccountNumber.text!, bankRoutingNumber: routingNumber.text!)
+            let newData: UniDataController = UniDataController.init()
+            newData.Save(user: UpdateDriver)
+            let okay = UIAlertAction(title: "Okay", style: .default, handler: nil)
+            let emptyField = UIAlertController(title: "Saved", message: "Updated your Account Infromation.", preferredStyle: .alert)
+            emptyField.addAction(okay)
+            present(emptyField, animated: true, completion: nil)
+        }
+    }
     /*
     // MARK: - Navigation
 

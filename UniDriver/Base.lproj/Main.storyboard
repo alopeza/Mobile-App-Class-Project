@@ -787,6 +787,17 @@
                                     <action selector="Route:" destination="rLX-LU-iHF" eventType="touchUpInside" id="Ifg-ge-Niu"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pw-IC-zKK">
+                                <rect key="frame" x="53" y="789" width="308" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="Z7u-3Z-AiO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Gibson-SemiBold" family="Gibson" pointSize="17"/>
+                                <state key="normal" title="FIND DRIVERS" backgroundImage="yellow"/>
+                                <connections>
+                                    <action selector="Route:" destination="rLX-LU-iHF" eventType="touchUpInside" id="jTj-XM-DwY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -842,7 +853,7 @@
                         <outlet property="RiderMapView" destination="4TL-N4-aJS" id="MDb-bi-8fp"/>
                         <outlet property="dropOffLocation" destination="6iy-VI-zRg" id="yFS-v0-xiq"/>
                         <outlet property="pickUpLocation" destination="H4p-fi-SOM" id="HaC-qI-Pma"/>
-                        <segue destination="cLu-GP-Mtw" kind="presentation" identifier="findDriver" modalPresentationStyle="overCurrentContext" id="aGf-wM-vqk"/>
+                        <outlet property="routeButton" destination="bKc-OG-dQr" id="prk-Lb-YEa"/>
                         <segue destination="xKo-81-uIm" kind="presentation" identifier="NoDriver" modalPresentationStyle="overCurrentContext" id="4Ek-kO-5Mp"/>
                     </connections>
                 </viewController>
@@ -947,52 +958,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Sj-8r-NHH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4229" y="520"/>
-        </scene>
-        <!--Find Driver Controller-->
-        <scene sceneID="1CQ-di-LU4">
-            <objects>
-                <viewController id="cLu-GP-Mtw" customClass="FindDriverController" customModule="UniDriver" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="h4u-fp-fZR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yj-qh-Det">
-                                <rect key="frame" x="27" y="789" width="361" height="57"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="57" id="GnA-qB-f6M"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Gibson-SemiBold" family="Gibson" pointSize="17"/>
-                                <state key="normal" title="FIND DRIVER" backgroundImage="yellow"/>
-                                <connections>
-                                    <action selector="findDrivers:" destination="cLu-GP-Mtw" eventType="touchUpInside" id="VSO-xg-78j"/>
-                                    <segue destination="ZGT-rO-iqU" kind="unwind" unwindAction="unwindToRider:" id="NXB-0Z-8VG"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="6yj-qh-Det" firstAttribute="leading" secondItem="jYy-sK-a9M" secondAttribute="leading" constant="27" id="Z3q-Qe-dWA"/>
-                            <constraint firstItem="jYy-sK-a9M" firstAttribute="bottom" secondItem="6yj-qh-Det" secondAttribute="bottom" constant="16" id="t7E-mR-V1b"/>
-                            <constraint firstItem="jYy-sK-a9M" firstAttribute="trailing" secondItem="6yj-qh-Det" secondAttribute="trailing" constant="26" id="y9X-vj-Ixv"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="jYy-sK-a9M"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="7PV-js-SFu">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="uyE-d3-FLY">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="m8n-j0-mmL">
-                                <rect key="frame" x="20" y="7" width="36" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="union"/>
-                                <connections>
-                                    <action selector="back:" destination="cLu-GP-Mtw" eventType="touchUpInside" id="mbN-jH-sdw"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KNq-zq-bZq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="ZGT-rO-iqU" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="2951" y="-597"/>
         </scene>
         <!--Driver Controller-->
         <scene sceneID="7VJ-aw-Sqc">
@@ -1318,6 +1283,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Gibson-SemiBold" family="Gibson" pointSize="17"/>
                                 <state key="normal" title="SAVE" backgroundImage="orange"/>
+                                <connections>
+                                    <action selector="Save:" destination="Nkw-DX-16V" eventType="touchUpInside" id="Nbc-CK-N9U"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name of Credit Card" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VFg-O5-eJ4">
                                 <rect key="frame" x="42" y="318" width="330" height="34"/>
@@ -1417,6 +1385,9 @@
                                 <rect key="frame" x="27" y="817" width="361" height="57"/>
                                 <fontDescription key="fontDescription" name="Gibson-SemiBold" family="Gibson" pointSize="17"/>
                                 <state key="normal" title="SAVE" backgroundImage="orange"/>
+                                <connections>
+                                    <action selector="Save:" destination="PAG-vr-8WC" eventType="touchUpInside" id="Hfc-nN-SdZ"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button" translatesAutoresizingMaskIntoConstraints="NO" id="5Ky-Fm-ewt">
                                 <rect key="frame" x="27" y="100" width="361" height="57"/>
