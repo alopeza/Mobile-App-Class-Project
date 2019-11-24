@@ -25,7 +25,7 @@ class RiderController: UIViewController {
         super.viewDidLoad()
         LocationManager.delegate = self as? CLLocationManagerDelegate
         LocationManager.requestWhenInUseAuthorization()
-      
+        
         
         
     }
