@@ -18,7 +18,7 @@ class FinancialInfo{
     func toAnyObject() -> Any{
         return [
             "ccNumber": ccNumber,
-            "ccExpData": ccExpDate,
+            "ccExpDate": ccExpDate,
             "cvv": cvv,
             "bankAccountNumber": bankAccountNumber,
             "bankRoutingNumber": bankRoutingNumber
