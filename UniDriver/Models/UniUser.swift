@@ -72,6 +72,10 @@ class UniUser{
         self.userType = UserType(rawValue: userType)!
         self.isLoggedIn = false
         
+        if let driverFare = value["driverFare"] as? String{
+            self.driverFare = Double(driverFare)
+        }
+        
         if let isLoggedIn = value["isLoggedIn"] as? String{
             if isLoggedIn == "true" {self.isLoggedIn = true}
         }
@@ -134,6 +138,10 @@ class UniUser{
         if let isLoggedIn = value["isLoggedIn"] as? String{
             if isLoggedIn == "true" {self.isLoggedIn = true}
         }
+        
+        if let driverFare = value["driverFare"] as? String{
+            self.driverFare = Double(driverFare)
+        }
 
         //load bank info
         if let bankInfoArray = value["bankInfo"] as? NSMutableArray,
@@ -183,7 +191,8 @@ class UniUser{
             "car":[car?.toAnyObject()],
             "bankInfo":[bankInfo?.toAnyObject()],
             "currentTrip":[currentTrip?.toAnyObject()],
-            "isLoggedIn": isLoggedIn.description
+            "isLoggedIn": isLoggedIn.description,
+            "driverFare": driverFare?.description
         ]
     }
     
