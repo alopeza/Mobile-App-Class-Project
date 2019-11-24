@@ -14,6 +14,7 @@ class RiderController: UIViewController, UITextFieldDelegate {
     private let LocationManager = CLLocationManager()
     var controller = UniDataController()
     var signedInUser: UniUser?
+    var driverUser: UniUser?
     
     @IBOutlet weak var routeButton: UIButton!
     @IBOutlet weak var findDriverButton: UIButton!
@@ -67,37 +68,42 @@ class RiderController: UIViewController, UITextFieldDelegate {
             let destinationVC = segue.destination as! RiderAccountController
             destinationVC.controller = controller
             destinationVC.signedInUser = signedInUser
+        } else if segue.identifier == "DriverFound"{
+            let destinationVC = segue.destination as! DriverFoundController
+            destinationVC.controller = controller
+            destinationVC.signedInUser = driverUser
         }
         
     }
     
     // MARK: - Model
-       
+
+    func FoundDrivers(){
+        self.performSegue(withIdentifier: "DriverFound", sender: self)
+    }
    func NoDrivers(){
        self.performSegue(withIdentifier: "NoDriver", sender: self)
    }
    
     
     @IBAction func findDrivers(_ sender: Any) {
-        var driverUser: UniUser?
+        
         var foundDriver = false
            controller.getDriveList(){
                list in
                
                for driver in list {
-                   if driver?.isLoggedIn == true {
-                        print("Found Driver!!")
-                        driverUser = driver
+                if driver?.isLoggedIn == true {
+                        self.driverUser = driver
                         foundDriver = true
                         break
                    }
                }
             if (!foundDriver) {
-                print("No Drivers")
+        
                 self.NoDrivers()
             } else {
-                print("Step 1")
-                print(String(driverUser!.name))
+                self.FoundDrivers()
                 
                 
             }

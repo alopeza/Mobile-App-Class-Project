@@ -31,6 +31,7 @@
 		9D54732A237A4BBB00BDB3E3 /* Gibson-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D72599E235AD41900D558B1 /* Gibson-SemiBold.ttf */; };
 		9D54732C237A4C0900BDB3E3 /* RiderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D54732B237A4C0900BDB3E3 /* RiderController.swift */; };
 		9D54732E237A4C1900BDB3E3 /* DriverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D54732D237A4C1900BDB3E3 /* DriverController.swift */; };
+		9D759385238B3A640038061E /* DriverFoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D759384238B3A640038061E /* DriverFoundController.swift */; };
 		9DB3FFA923777DD80035B148 /* CustomNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3FFA823777DD80035B148 /* CustomNavController.swift */; };
 		C70DAF61238708E000FDC933 /* RiderAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70DAF60238708E000FDC933 /* RiderAccountController.swift */; };
 		C70DAF6323870C5100FDC933 /* DriverAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70DAF6223870C5100FDC933 /* DriverAccountController.swift */; };
@@ -64,6 +65,7 @@
 		9D72599D235AD41900D558B1 /* Gibson-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gibson-Light.ttf"; sourceTree = "<group>"; };
 		9D72599E235AD41900D558B1 /* Gibson-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gibson-SemiBold.ttf"; sourceTree = "<group>"; };
 		9D72599F235AD41900D558B1 /* Gibson.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Gibson.ttf; sourceTree = "<group>"; };
+		9D759384238B3A640038061E /* DriverFoundController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverFoundController.swift; sourceTree = "<group>"; };
 		9DB3FFA823777DD80035B148 /* CustomNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavController.swift; sourceTree = "<group>"; };
 		C70DAF60238708E000FDC933 /* RiderAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderAccountController.swift; sourceTree = "<group>"; };
 		C70DAF6223870C5100FDC933 /* DriverAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAccountController.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				8A4863D12384CCC600A5F293 /* UniDataController.swift */,
 				9D4EEE4E238A8CEC00D88B1F /* RiderFoundController.swift */,
 				9D4EEE50238B186700D88B1F /* NoDriverController.swift */,
+				9D759384238B3A640038061E /* DriverFoundController.swift */,
 			);
 			path = UniDriver;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				C70DAF61238708E000FDC933 /* RiderAccountController.swift in Sources */,
 				9D42B90E235ACC5D004092F9 /* ViewController.swift in Sources */,
 				8AD048662383943400111523 /* Vehicle.swift in Sources */,
+				9D759385238B3A640038061E /* DriverFoundController.swift in Sources */,
 				9D54732C237A4C0900BDB3E3 /* RiderController.swift in Sources */,
 				8AD04868238394F200111523 /* GoogleService-Info.plist in Sources */,
 				9D42B90A235ACC5D004092F9 /* AppDelegate.swift in Sources */,
