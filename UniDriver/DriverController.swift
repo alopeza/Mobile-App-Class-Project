@@ -10,7 +10,7 @@ class DriverController: UIViewController {
 
     private let LocationManager = CLLocationManager()
     var controller = UniDataController()
-    var signedInUser: UniUser?
+    var signedDriverUser: UniUser?
     
     @IBOutlet weak var clockInButton: UIButton!
     @IBOutlet weak var clockOutButton: UIButton!
@@ -33,8 +33,8 @@ class DriverController: UIViewController {
         clockInButton.isHidden = true
         clockOutButton.isEnabled = true
         clockOutButton.isHidden = false
-        signedInUser?.isLoggedIn = true
-        controller.Save(user: signedInUser!)
+        signedDriverUser?.isLoggedIn = true
+        controller.Save(user: signedDriverUser!)
     }
     
     @IBAction func ClockOut(_ sender: Any) {
@@ -42,8 +42,8 @@ class DriverController: UIViewController {
         clockInButton.isHidden = false
         clockOutButton.isEnabled = false
         clockOutButton.isHidden = true
-        signedInUser?.isLoggedIn = false
-        controller.Save(user: signedInUser!)
+        signedDriverUser?.isLoggedIn = false
+        controller.Save(user: signedDriverUser!)
     }
     // MARK: - Navigation
     @IBAction func AccountInfo(_ sender: Any) {
@@ -57,7 +57,7 @@ class DriverController: UIViewController {
         if segue.identifier == "DiverAccount" {
             let destinationVC = segue.destination as! DriverAccountController
             destinationVC.controller = controller
-            destinationVC.signedInUser = signedInUser
+            destinationVC.signedDriverUser = signedDriverUser
         }
     }
 

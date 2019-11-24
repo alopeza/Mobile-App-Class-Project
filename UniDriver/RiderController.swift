@@ -13,7 +13,7 @@ class RiderController: UIViewController, UITextFieldDelegate {
     //MARK: - Variables and Outlets
     private let LocationManager = CLLocationManager()
     var controller = UniDataController()
-    var signedInUser: UniUser?
+    var signedRiderUser: UniUser?
     var driverUser: UniUser?
     
     @IBOutlet weak var routeButton: UIButton!
@@ -67,11 +67,11 @@ class RiderController: UIViewController, UITextFieldDelegate {
         if segue.identifier == "RiderAccount" {
             let destinationVC = segue.destination as! RiderAccountController
             destinationVC.controller = controller
-            destinationVC.signedInUser = signedInUser
+            destinationVC.signedRiderUser = signedRiderUser
         } else if segue.identifier == "DriverFound"{
             let destinationVC = segue.destination as! DriverFoundController
             destinationVC.controller = controller
-            destinationVC.signedInUser = driverUser
+            destinationVC.driverUser = driverUser
         }
         
     }

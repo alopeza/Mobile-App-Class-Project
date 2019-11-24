@@ -999,7 +999,6 @@
                                 <state key="normal" image="clock-in"/>
                                 <connections>
                                     <action selector="ClockIn:" destination="Pkl-XM-IM7" eventType="touchUpInside" id="gSC-p7-yay"/>
-                                    <segue destination="a6A-Q4-BfV" kind="presentation" modalPresentationStyle="overCurrentContext" id="Xpr-ql-5Se"/>
                                 </connections>
                             </button>
                         </subviews>

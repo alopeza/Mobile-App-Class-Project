@@ -75,7 +75,7 @@ class LoginController: UIViewController {
         if self.signedInUser?.userType == .Rider {
             let destinationVC = segue.destination as! RiderController
             destinationVC.controller = controller
-            destinationVC.signedInUser = signedInUser
+            destinationVC.signedRiderUser = signedInUser
         
         }
         //perform driver segue
@@ -83,7 +83,7 @@ class LoginController: UIViewController {
             
             let destinationVC = segue.destination as! DriverController
             destinationVC.controller = controller
-            destinationVC.signedInUser = signedInUser
+            destinationVC.signedDriverUser = signedInUser
            
         } else {
             

@@ -11,7 +11,7 @@ import UIKit
 class DriverFoundController: UIViewController {
     
     var controller = UniDataController()
-    var signedInUser: UniUser?
+    var driverUser: UniUser?
     
 
     @IBOutlet weak var userName: UILabel!
@@ -24,13 +24,13 @@ class DriverFoundController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        controller.getUser(userName: signedInUser!.username) { currUser in
-            self.signedInUser = currUser
-            self.userName.text = self.signedInUser!.name
-            self.make.text = self.signedInUser!.car?.make
-            self.model.text = self.signedInUser!.car?.model
-            self.color.text = self.signedInUser!.car?.color
-            self.license.text = self.signedInUser!.car?.licensePlate
+        controller.getUser(userName: driverUser!.username) { currUser in
+            self.driverUser = currUser
+            self.userName.text = self.driverUser!.name
+            self.make.text = self.driverUser!.car?.make
+            self.model.text = self.driverUser!.car?.model
+            self.color.text = self.driverUser!.car?.color
+            self.license.text = self.driverUser!.car?.licensePlate
             
             
         }

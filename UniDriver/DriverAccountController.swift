@@ -11,7 +11,7 @@ import UIKit
 class DriverAccountController: UIViewController {
     
     var controller = UniDataController()
-    var signedInUser: UniUser?
+    var signedDriverUser: UniUser?
     
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -30,19 +30,19 @@ class DriverAccountController: UIViewController {
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
-        controller.getUser(userName: signedInUser!.username) { currUser in
-            self.signedInUser = currUser
-            self.username.text = self.signedInUser!.username
-            self.password.text = self.signedInUser!.password
-            self.email.text = self.signedInUser!.email
-            self.carMake.text = self.signedInUser!.car?.make
-            self.carModel.text = self.signedInUser!.car?.model
-            self.colorOfCar.text = self.signedInUser!.car?.color
-            self.licensePlate.text = self.signedInUser!.car?.licensePlate
-            self.name.text = self.signedInUser!.name
-            self.routingNumber.text = self.signedInUser!.bankInfo?.bankRoutingNumber
-            self.bankAccountNumber.text = self.signedInUser!.bankInfo?.bankAccountNumber
-            self.hourlyRate.text = (self.signedInUser!.driverFare)?.description
+        controller.getUser(userName: signedDriverUser!.username) { currUser in
+            self.signedDriverUser = currUser
+            self.username.text = self.signedDriverUser!.username
+            self.password.text = self.signedDriverUser!.password
+            self.email.text = self.signedDriverUser!.email
+            self.carMake.text = self.signedDriverUser!.car?.make
+            self.carModel.text = self.signedDriverUser!.car?.model
+            self.colorOfCar.text = self.signedDriverUser!.car?.color
+            self.licensePlate.text = self.signedDriverUser!.car?.licensePlate
+            self.name.text = self.signedDriverUser!.name
+            self.routingNumber.text = self.signedDriverUser!.bankInfo?.bankRoutingNumber
+            self.bankAccountNumber.text = self.signedDriverUser!.bankInfo?.bankAccountNumber
+            self.hourlyRate.text = (self.signedDriverUser!.driverFare)?.description
         }
     }
     

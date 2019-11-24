@@ -11,7 +11,7 @@ import UIKit
 class RiderAccountController: UIViewController {
     
     var controller = UniDataController()
-    var signedInUser: UniUser?
+    var signedRiderUser: UniUser?
     
     
     @IBOutlet weak var username: UITextField!
@@ -29,15 +29,15 @@ class RiderAccountController: UIViewController {
         // Do any additional setup after loading the view.
                 
                 
-        controller.getUser(userName: signedInUser!.username) { currUser in
-                self.signedInUser = currUser
-                self.username.text = self.signedInUser!.username
-                self.password.text = self.signedInUser!.password
-                self.email.text = self.signedInUser!.email
-                self.nameOfCard.text = self.signedInUser!.name
-                self.cardNumber.text = self.signedInUser!.bankInfo?.ccNumber
-                self.expDate.text = self.signedInUser!.bankInfo?.ccExpDate
-                self.cvv.text = self.signedInUser!.bankInfo?.cvv
+        controller.getUser(userName: signedRiderUser!.username) { currUser in
+                self.signedRiderUser = currUser
+                self.username.text = self.signedRiderUser!.username
+                self.password.text = self.signedRiderUser!.password
+                self.email.text = self.signedRiderUser!.email
+                self.nameOfCard.text = self.signedRiderUser!.name
+                self.cardNumber.text = self.signedRiderUser!.bankInfo?.ccNumber
+                self.expDate.text = self.signedRiderUser!.bankInfo?.ccExpDate
+                self.cvv.text = self.signedRiderUser!.bankInfo?.cvv
                 
                 }
         
