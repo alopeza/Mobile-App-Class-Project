@@ -44,7 +44,7 @@ class RiderController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func AccountInfo(_ sender: Any) {
-        self.performSegue(withIdentifier: "RiderAccount", sender: self)
+        //self.performSegue(withIdentifier: "RiderAccount", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

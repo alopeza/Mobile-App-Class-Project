@@ -43,7 +43,7 @@ class DriverController: UIViewController {
     }
     // MARK: - Navigation
     @IBAction func AccountInfo(_ sender: Any) {
-         self.performSegue(withIdentifier: "DiverAccount", sender: self)
+        // self.performSegue(withIdentifier: "DiverAccount", sender: self)
     }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
