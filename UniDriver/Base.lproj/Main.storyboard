@@ -768,16 +768,17 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.87" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_find_driver" translatesAutoresizingMaskIntoConstraints="NO" id="vXp-kp-hN5">
-                                <rect key="frame" x="0.0" y="578" width="414" height="318"/>
+                                <rect key="frame" x="0.0" y="737" width="414" height="159"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKc-OG-dQr">
                                 <rect key="frame" x="53" y="789" width="308" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="yLH-ir-xF9"/>
                                 </constraints>
-                                <state key="normal" image="ROUTE"/>
+                                <fontDescription key="fontDescription" name="Gibson-SemiBold" family="Gibson" pointSize="17"/>
+                                <state key="normal" title="ROUTE" backgroundImage="red"/>
                                 <connections>
-                                    <segue destination="cLu-GP-Mtw" kind="show" id="NGa-1M-2X0"/>
+                                    <segue destination="cLu-GP-Mtw" kind="presentation" modalPresentationStyle="overCurrentContext" id="NGa-1M-2X0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -857,13 +858,13 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="4iO-tF-hnD"/>
                                 </constraints>
-                                <state key="normal" image="find-driver-button"/>
+                                <fontDescription key="fontDescription" name="Gibson-SemiBold" family="Gibson" pointSize="17"/>
+                                <state key="normal" title="FIND DRIVER" backgroundImage="yellow"/>
                                 <connections>
                                     <action selector="findDrivers:" destination="cLu-GP-Mtw" eventType="touchUpInside" id="CRW-A9-cJb"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="DYI-T9-qVh" firstAttribute="trailing" secondItem="jYy-sK-a9M" secondAttribute="trailing" id="8gf-Ra-jCN"/>
                             <constraint firstItem="6yj-qh-Det" firstAttribute="leading" secondItem="jYy-sK-a9M" secondAttribute="leading" constant="27" id="JHA-t6-mTA"/>
@@ -1093,7 +1094,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="Dlx-II-rkF"/>
                                 </constraints>
-                                <state key="normal" image="registerButton"/>
+                                <fontDescription key="fontDescription" name="Gibson-SemiBold" family="Gibson" pointSize="17"/>
+                                <state key="normal" title="SAVE" backgroundImage="orange"/>
                                 <connections>
                                     <action selector="signUp:" destination="Nkw-DX-16V" eventType="touchUpInside" id="Zh4-ZQ-oyc"/>
                                 </connections>
@@ -1194,7 +1196,8 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHr-P2-8f0">
                                 <rect key="frame" x="27" y="817" width="361" height="57"/>
-                                <state key="normal" image="registerButton"/>
+                                <fontDescription key="fontDescription" name="Gibson-SemiBold" family="Gibson" pointSize="17"/>
+                                <state key="normal" title="SAVE" backgroundImage="orange"/>
                                 <connections>
                                     <action selector="signUp:" destination="PAG-vr-8WC" eventType="touchUpInside" id="7L2-WC-Gcp"/>
                                 </connections>
@@ -1418,16 +1421,17 @@
     </scenes>
     <resources>
         <image name="Current-and-Destination" width="426" height="195"/>
-        <image name="ROUTE" width="308" height="57"/>
         <image name="bg_find_driver" width="414" height="159"/>
         <image name="button" width="362" height="57"/>
         <image name="clock-in" width="231" height="57"/>
         <image name="clock-out" width="231" height="57"/>
-        <image name="find-driver-button" width="361" height="57"/>
+        <image name="orange" width="361" height="57"/>
+        <image name="red" width="308" height="57"/>
         <image name="registerButton" width="361" height="57"/>
         <image name="signInButton" width="361" height="57"/>
         <image name="union" width="17.666666030883789" height="15"/>
         <image name="west_porch001-b" width="1600" height="900"/>
+        <image name="yellow" width="361" height="57"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7in-ZB-XIV"/>

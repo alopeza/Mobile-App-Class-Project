@@ -29,6 +29,7 @@ class FindDriverController: UIViewController {
             list in
             print("numbers of drivers " + String(list.count))
         }
+        dismiss(animated: true)
     }
     
     
