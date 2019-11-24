@@ -33,6 +33,8 @@ class DriverController: UIViewController {
         clockInButton.isHidden = true
         clockOutButton.isEnabled = true
         clockOutButton.isHidden = false
+        signedInUser?.isLoggedIn = true
+        controller.Save(user: signedInUser!)
     }
     
     @IBAction func ClockOut(_ sender: Any) {
@@ -40,10 +42,12 @@ class DriverController: UIViewController {
         clockInButton.isHidden = false
         clockOutButton.isEnabled = false
         clockOutButton.isHidden = true
+        signedInUser?.isLoggedIn = false
+        controller.Save(user: signedInUser!)
     }
     // MARK: - Navigation
     @IBAction func AccountInfo(_ sender: Any) {
-        // self.performSegue(withIdentifier: "DiverAccount", sender: self)
+        self.performSegue(withIdentifier: "DiverAccount", sender: self)
     }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation

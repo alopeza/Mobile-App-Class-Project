@@ -973,15 +973,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.87000000476837158" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_find_driver" translatesAutoresizingMaskIntoConstraints="NO" id="5je-bf-gE4">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.87000000476837158" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_find_driver" translatesAutoresizingMaskIntoConstraints="NO" id="5je-bf-gE4">
                                 <rect key="frame" x="0.0" y="740" width="414" height="156"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="156" id="zrx-VC-vUb"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SoT-Yz-awf">
                                 <rect key="frame" x="91.666666666666686" y="789" width="231" height="57"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="57" id="Y97-ri-op9"/>
-                                    <constraint firstAttribute="width" constant="231" id="ds6-ll-hCc"/>
+                                    <constraint firstAttribute="width" constant="231" id="L3X-Ly-b3o"/>
+                                    <constraint firstAttribute="height" constant="57" id="V9t-bJ-zZS"/>
                                 </constraints>
                                 <state key="normal" image="clock-out"/>
                                 <connections>
@@ -1006,10 +1008,13 @@
                             <constraint firstItem="iqx-BD-noG" firstAttribute="top" secondItem="odf-3S-DC5" secondAttribute="top" id="17g-Hb-7y9"/>
                             <constraint firstAttribute="bottom" secondItem="iqx-BD-noG" secondAttribute="bottom" id="Nsu-R5-0TQ"/>
                             <constraint firstItem="iqx-BD-noG" firstAttribute="leading" secondItem="fym-ew-S0C" secondAttribute="leading" id="OFu-R9-i1W"/>
+                            <constraint firstItem="SoT-Yz-awf" firstAttribute="centerX" secondItem="odf-3S-DC5" secondAttribute="centerX" id="Qxl-Bu-g8Y"/>
+                            <constraint firstItem="fym-ew-S0C" firstAttribute="bottom" secondItem="SoT-Yz-awf" secondAttribute="bottom" constant="16" id="Xah-iV-Z1Z"/>
+                            <constraint firstAttribute="bottom" secondItem="5je-bf-gE4" secondAttribute="bottom" id="Yu9-Ku-Dxv"/>
                             <constraint firstItem="iqx-BD-noG" firstAttribute="trailing" secondItem="fym-ew-S0C" secondAttribute="trailing" id="aJL-JQ-u2f"/>
-                            <constraint firstItem="SoT-Yz-awf" firstAttribute="centerX" secondItem="odf-3S-DC5" secondAttribute="centerX" id="dC6-rD-iUu"/>
+                            <constraint firstItem="5je-bf-gE4" firstAttribute="leading" secondItem="fym-ew-S0C" secondAttribute="leading" id="c7n-Z8-2Gd"/>
                             <constraint firstItem="6cd-o7-zVN" firstAttribute="centerX" secondItem="odf-3S-DC5" secondAttribute="centerX" id="daw-SJ-e49"/>
-                            <constraint firstItem="fym-ew-S0C" firstAttribute="bottom" secondItem="SoT-Yz-awf" secondAttribute="bottom" constant="16" id="exi-f3-kwp"/>
+                            <constraint firstItem="5je-bf-gE4" firstAttribute="trailing" secondItem="fym-ew-S0C" secondAttribute="trailing" id="eC5-4l-YQk"/>
                             <constraint firstItem="fym-ew-S0C" firstAttribute="bottom" secondItem="6cd-o7-zVN" secondAttribute="bottom" constant="16" id="v7O-bg-qvA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fym-ew-S0C"/>

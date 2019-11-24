@@ -110,6 +110,15 @@ class RiderController: UIViewController, UITextFieldDelegate {
             
            }
         
+        controller.getDriveList(){
+        list in
+        
+        for driver in list {
+            print(String(driver!.name))
+            
+            }
+        }
+        
         
         
     }
