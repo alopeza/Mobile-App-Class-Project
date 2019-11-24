@@ -20,7 +20,8 @@ class DriverSignUpController: UIViewController {
     @IBOutlet weak var bankAccountNumber: UITextField!
     @IBOutlet weak var hourlyRate: UITextField!
     
-
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,7 +30,10 @@ class DriverSignUpController: UIViewController {
         //tapping anywhere on the screen will dismiss the keyboard
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
+       
     }
+    
+   
     
     
     @IBAction func signUp(_ sender: Any) {
