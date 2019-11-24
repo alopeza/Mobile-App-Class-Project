@@ -7,6 +7,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Gibson-Light.ttf">
+            <string>Gibson-Light</string>
+        </array>
         <array key="Gibson-SemiBold.ttf">
             <string>Gibson-SemiBold</string>
         </array>
@@ -778,7 +781,7 @@
                                 <fontDescription key="fontDescription" name="Gibson-SemiBold" family="Gibson" pointSize="17"/>
                                 <state key="normal" title="ROUTE" backgroundImage="red"/>
                                 <connections>
-                                    <segue destination="cLu-GP-Mtw" kind="presentation" modalPresentationStyle="overCurrentContext" id="NGa-1M-2X0"/>
+                                    <action selector="Route:" destination="rLX-LU-iHF" eventType="touchUpInside" id="Ifg-ge-Niu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -836,11 +839,52 @@
                         <outlet property="RiderMapView" destination="4TL-N4-aJS" id="MDb-bi-8fp"/>
                         <outlet property="dropOffLocation" destination="6iy-VI-zRg" id="yFS-v0-xiq"/>
                         <outlet property="pickUpLocation" destination="H4p-fi-SOM" id="HaC-qI-Pma"/>
+                        <segue destination="cLu-GP-Mtw" kind="presentation" identifier="findDriver" modalPresentationStyle="overCurrentContext" id="aGf-wM-vqk"/>
+                        <segue destination="xKo-81-uIm" kind="presentation" modalPresentationStyle="overCurrentContext" id="4Ek-kO-5Mp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sYl-Vi-0Lj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2002.8985507246377" y="117.85714285714285"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="u4z-rz-N90">
+            <objects>
+                <viewController id="xKo-81-uIm" customClass="ViewController" customModule="UniDriver" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fd6-fB-JKJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-find-drivers" translatesAutoresizingMaskIntoConstraints="NO" id="sK7-jP-xPx">
+                                <rect key="frame" x="26" y="367" width="362" height="162"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ij3-Qp-64i">
+                                <rect key="frame" x="53" y="460" width="308" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Gibson-SemiBold" family="Gibson" pointSize="17"/>
+                                <state key="normal" title="CANCEL" backgroundImage="red"/>
+                                <connections>
+                                    <action selector="Route:" destination="rLX-LU-iHF" eventType="touchUpInside" id="lp9-CM-hzW"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NO DRIVERS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4Y-51-HLi">
+                                <rect key="frame" x="139" y="402" width="137" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Gibson-SemiBold" family="Gibson" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="sK7-jP-xPx" firstAttribute="centerY" secondItem="Fd6-fB-JKJ" secondAttribute="centerY" id="BHl-tu-ObV"/>
+                            <constraint firstItem="sK7-jP-xPx" firstAttribute="centerX" secondItem="Fd6-fB-JKJ" secondAttribute="centerX" id="y0c-1k-p4V"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FwG-Bb-UUx"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IcS-TN-vKS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2950.7246376811595" y="117.85714285714285"/>
         </scene>
         <!--Find Driver Controller-->
         <scene sceneID="1CQ-di-LU4">
@@ -890,7 +934,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KNq-zq-bZq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2971" y="118"/>
+            <point key="canvasLocation" x="2951" y="-597"/>
         </scene>
         <!--Driver Controller-->
         <scene sceneID="7VJ-aw-Sqc">
@@ -927,6 +971,7 @@
                                 <state key="normal" image="clock-in"/>
                                 <connections>
                                     <action selector="ClockIn:" destination="Pkl-XM-IM7" eventType="touchUpInside" id="gSC-p7-yay"/>
+                                    <segue destination="a6A-Q4-BfV" kind="presentation" modalPresentationStyle="overCurrentContext" id="Xpr-ql-5Se"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -984,6 +1029,125 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i6t-hP-J3D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2002.8985507246377" y="841.74107142857144"/>
+        </scene>
+        <!--Rider Found Controller-->
+        <scene sceneID="5as-es-mPb">
+            <objects>
+                <viewController id="a6A-Q4-BfV" customClass="RiderFoundController" customModule="UniDriver" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S9x-cW-Trd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-arrived" translatesAutoresizingMaskIntoConstraints="NO" id="wD8-gl-1tF">
+                                <rect key="frame" x="17" y="298.66666666666669" width="380" height="299.00000000000006"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="299" id="etS-jN-SSa"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXY-oR-oX2">
+                                <rect key="frame" x="155.66666666666666" y="316" width="102.99999999999997" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="oEc-g8-mnQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Gibson-SemiBold" family="Gibson" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKE-qB-iEW">
+                                <rect key="frame" x="170" y="384" width="74" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19" id="Sme-vc-Pv3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Gibson-Light" family="Gibson" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fare shows $1 deduction" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XyR-ww-h94">
+                                <rect key="frame" x="121.66666666666669" y="501" width="171" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="JqK-J5-vU4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Gibson-Light" family="Gibson" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Time:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gib-em-Bi3">
+                                <rect key="frame" x="177.66666666666666" y="438.66666666666669" width="59" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19" id="Kz9-XA-sdc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Gibson-Light" family="Gibson" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bar" translatesAutoresizingMaskIntoConstraints="NO" id="w8G-qp-dA6">
+                                <rect key="frame" x="27" y="363" width="360" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="jbL-Dk-16E"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$10.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBx-ef-Qbj">
+                                <rect key="frame" x="167.66666666666666" y="463.66666666666669" width="79" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="uEK-5B-D8N"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Gibson-SemiBold" family="Gibson" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAO-gI-yhm">
+                                <rect key="frame" x="91.666666666666686" y="528" width="231" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="jso-Np-qZc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Gibson-SemiBold" family="Gibson" pointSize="17"/>
+                                <state key="normal" title="OK" backgroundImage="green-small"/>
+                                <connections>
+                                    <action selector="Route:" destination="rLX-LU-iHF" eventType="touchUpInside" id="KBX-ai-K01"/>
+                                    <action selector="accept:" destination="a6A-Q4-BfV" eventType="touchUpInside" id="tsa-ZI-gS5"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bar" translatesAutoresizingMaskIntoConstraints="NO" id="bYi-hD-75f">
+                                <rect key="frame" x="27" y="422.66666666666669" width="360" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="YJA-tD-BOI"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="bYi-hD-75f" firstAttribute="top" secondItem="kKE-qB-iEW" secondAttribute="bottom" constant="19.670000000000002" id="0C9-2M-hM4"/>
+                            <constraint firstItem="Gib-em-Bi3" firstAttribute="top" secondItem="bYi-hD-75f" secondAttribute="bottom" constant="14.67" id="8lM-SN-W8k"/>
+                            <constraint firstItem="Uao-IM-WcD" firstAttribute="trailing" secondItem="wD8-gl-1tF" secondAttribute="trailing" constant="17" id="E6w-kR-19H"/>
+                            <constraint firstItem="DXY-oR-oX2" firstAttribute="centerX" secondItem="S9x-cW-Trd" secondAttribute="centerX" id="FDz-CL-u2j"/>
+                            <constraint firstItem="w8G-qp-dA6" firstAttribute="centerX" secondItem="S9x-cW-Trd" secondAttribute="centerX" id="KpP-ld-GDe"/>
+                            <constraint firstItem="wD8-gl-1tF" firstAttribute="leading" secondItem="Uao-IM-WcD" secondAttribute="leading" constant="17" id="MCb-yK-L9r"/>
+                            <constraint firstItem="w8G-qp-dA6" firstAttribute="top" secondItem="DXY-oR-oX2" secondAttribute="bottom" constant="21" id="P6f-ia-z6S"/>
+                            <constraint firstItem="oAO-gI-yhm" firstAttribute="top" secondItem="XyR-ww-h94" secondAttribute="bottom" constant="6" id="V5u-rz-qcx"/>
+                            <constraint firstItem="kKE-qB-iEW" firstAttribute="top" secondItem="w8G-qp-dA6" secondAttribute="bottom" constant="20" id="cgL-cP-T2k"/>
+                            <constraint firstItem="Gib-em-Bi3" firstAttribute="centerY" secondItem="S9x-cW-Trd" secondAttribute="centerY" id="eh5-aH-2ek"/>
+                            <constraint firstItem="bBx-ef-Qbj" firstAttribute="centerX" secondItem="S9x-cW-Trd" secondAttribute="centerX" id="gQO-QU-dBw"/>
+                            <constraint firstItem="Gib-em-Bi3" firstAttribute="centerX" secondItem="S9x-cW-Trd" secondAttribute="centerX" id="gaM-sX-PSt"/>
+                            <constraint firstItem="wD8-gl-1tF" firstAttribute="centerX" secondItem="S9x-cW-Trd" secondAttribute="centerX" id="gsk-B3-pcc"/>
+                            <constraint firstItem="XyR-ww-h94" firstAttribute="centerX" secondItem="S9x-cW-Trd" secondAttribute="centerX" id="hCq-6e-w3M"/>
+                            <constraint firstItem="oAO-gI-yhm" firstAttribute="centerX" secondItem="S9x-cW-Trd" secondAttribute="centerX" id="haZ-I2-foB"/>
+                            <constraint firstItem="kKE-qB-iEW" firstAttribute="centerX" secondItem="S9x-cW-Trd" secondAttribute="centerX" id="jKx-vE-zHf"/>
+                            <constraint firstItem="bYi-hD-75f" firstAttribute="centerX" secondItem="S9x-cW-Trd" secondAttribute="centerX" id="kd1-v1-JVL"/>
+                            <constraint firstItem="XyR-ww-h94" firstAttribute="top" secondItem="bBx-ef-Qbj" secondAttribute="bottom" constant="8.3300000000000001" id="ph2-Lq-hZT"/>
+                            <constraint firstItem="wD8-gl-1tF" firstAttribute="centerY" secondItem="S9x-cW-Trd" secondAttribute="centerY" id="rCY-M9-kqQ"/>
+                            <constraint firstItem="bBx-ef-Qbj" firstAttribute="top" secondItem="Gib-em-Bi3" secondAttribute="bottom" constant="6.3300000000000001" id="zXe-49-hkb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Uao-IM-WcD"/>
+                    </view>
+                    <connections>
+                        <outlet property="destination" destination="kKE-qB-iEW" id="nAk-9w-jrJ"/>
+                        <outlet property="fare" destination="bBx-ef-Qbj" id="vlD-9E-fmk"/>
+                        <outlet property="tripTime" destination="Gib-em-Bi3" id="EW1-1e-J4i"/>
+                        <outlet property="userName" destination="DXY-oR-oX2" id="MU6-3J-C2e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xLd-kT-UTl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2951" y="842"/>
         </scene>
         <!--Rider Account Controller-->
         <scene sceneID="S8y-Gd-70Z">
@@ -1416,15 +1580,19 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nrk-hl-fPC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2993" y="818"/>
+            <point key="canvasLocation" x="2003" y="1556"/>
         </scene>
     </scenes>
     <resources>
         <image name="Current-and-Destination" width="426" height="195"/>
+        <image name="bar" width="360" height="1"/>
+        <image name="bg-arrived" width="362" height="212"/>
+        <image name="bg-find-drivers" width="362" height="162"/>
         <image name="bg_find_driver" width="414" height="159"/>
         <image name="button" width="362" height="57"/>
         <image name="clock-in" width="231" height="57"/>
         <image name="clock-out" width="231" height="57"/>
+        <image name="green-small" width="231" height="57"/>
         <image name="orange" width="361" height="57"/>
         <image name="red" width="308" height="57"/>
         <image name="registerButton" width="361" height="57"/>

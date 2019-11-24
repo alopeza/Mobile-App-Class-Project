@@ -21,6 +21,7 @@
 		9D42B911235ACC5D004092F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D42B90F235ACC5D004092F9 /* Main.storyboard */; };
 		9D42B913235ACC5E004092F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D42B912235ACC5E004092F9 /* Assets.xcassets */; };
 		9D42B916235ACC5E004092F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D42B914235ACC5E004092F9 /* LaunchScreen.storyboard */; };
+		9D4EEE4F238A8CEC00D88B1F /* RiderFoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4EEE4E238A8CEC00D88B1F /* RiderFoundController.swift */; };
 		9D547323237A47B400BDB3E3 /* RiderSignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D547322237A47B400BDB3E3 /* RiderSignUpController.swift */; };
 		9D547325237A47C200BDB3E3 /* DriverSignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D547324237A47C200BDB3E3 /* DriverSignUpController.swift */; };
 		9D547327237A4A5400BDB3E3 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D547326237A4A5400BDB3E3 /* LoginController.swift */; };
@@ -53,6 +54,7 @@
 		9D42B912235ACC5E004092F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D42B915235ACC5E004092F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D42B917235ACC5E004092F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D4EEE4E238A8CEC00D88B1F /* RiderFoundController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderFoundController.swift; sourceTree = "<group>"; };
 		9D547322237A47B400BDB3E3 /* RiderSignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderSignUpController.swift; sourceTree = "<group>"; };
 		9D547324237A47C200BDB3E3 /* DriverSignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverSignUpController.swift; sourceTree = "<group>"; };
 		9D547326237A4A5400BDB3E3 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				C70DAF6223870C5100FDC933 /* DriverAccountController.swift */,
 				8AD04867238394F200111523 /* GoogleService-Info.plist */,
 				8A4863D12384CCC600A5F293 /* UniDataController.swift */,
+				9D4EEE4E238A8CEC00D88B1F /* RiderFoundController.swift */,
 			);
 			path = UniDriver;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				9D547323237A47B400BDB3E3 /* RiderSignUpController.swift in Sources */,
 				9D54732E237A4C1900BDB3E3 /* DriverController.swift in Sources */,
 				9D42B90C235ACC5D004092F9 /* SceneDelegate.swift in Sources */,
+				9D4EEE4F238A8CEC00D88B1F /* RiderFoundController.swift in Sources */,
 				8A4863D22384CCC600A5F293 /* UniDataController.swift in Sources */,
 				8AD0485E2383934700111523 /* FinancialInfo.swift in Sources */,
 				9D547327237A4A5400BDB3E3 /* LoginController.swift in Sources */,

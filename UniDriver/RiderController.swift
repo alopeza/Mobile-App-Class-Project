@@ -39,6 +39,9 @@ class RiderController: UIViewController, UITextFieldDelegate {
         _ = navigationController?.popViewController(animated: true)
     }
 
+    @IBAction func Route(_ sender: Any) {
+        self.performSegue(withIdentifier: "findDriver", sender: self)
+    }
     
     @IBAction func AccountInfo(_ sender: Any) {
         self.performSegue(withIdentifier: "RiderAccount", sender: self)
@@ -50,7 +53,7 @@ class RiderController: UIViewController, UITextFieldDelegate {
             destinationVC.controller = controller
             destinationVC.signedInUser = signedInUser
         }
-        else {
+        else if segue.identifier == "findDriver" {
             let destinationVC = segue.destination as! FindDriverController
             destinationVC.controller = controller
             destinationVC.signedInUser = signedInUser
