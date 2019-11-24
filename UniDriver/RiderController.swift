@@ -79,20 +79,33 @@ class RiderController: UIViewController, UITextFieldDelegate {
    
     
     @IBAction func findDrivers(_ sender: Any) {
-        
+        var driverUser: UniUser?
+        var foundDriver = false
            controller.getDriveList(){
                list in
                
                for driver in list {
-                   if driver?.isLoggedIn == false {
-                       print("Found Driver")
-                       
+                   if driver?.isLoggedIn == true {
+                        print("Found Driver!!")
+                        driverUser = driver
+                        foundDriver = true
+                        break
                    }
                }
+            if (!foundDriver) {
+                print("No Drivers")
+                self.NoDrivers()
+            } else {
+                print("Step 1")
+                print(String(driverUser!.name))
+                
+                
+            }
+            
            }
-    
-           print("Find Drivers")
-           NoDrivers()
+        
+        
+        
     }
 }
 
