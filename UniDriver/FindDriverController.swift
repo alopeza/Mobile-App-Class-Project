@@ -37,24 +37,12 @@ class FindDriverController: UIViewController {
                // }
             }
         }
-        
-       
+ 
         print("Find Drivers")
-        
-        //dismiss(animated: true)
-        
-         _ = navigationController?.popViewController(animated: true)
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? RiderController {
-            if !foundDriver {
-                destination.unwindToRider(segue)
-                print("No Drivers Methods")
-            }
-        }
-    }
+    
     
     
     

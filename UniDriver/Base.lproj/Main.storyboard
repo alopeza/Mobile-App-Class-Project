@@ -787,6 +787,17 @@
                                     <action selector="Route:" destination="rLX-LU-iHF" eventType="touchUpInside" id="Ifg-ge-Niu"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pw-IC-zKK">
+                                <rect key="frame" x="53" y="789" width="308" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="Z7u-3Z-AiO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Gibson-SemiBold" family="Gibson" pointSize="17"/>
+                                <state key="normal" title="FIND DRIVERS" backgroundImage="yellow"/>
+                                <connections>
+                                    <action selector="Route:" destination="rLX-LU-iHF" eventType="touchUpInside" id="jTj-XM-DwY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -842,7 +853,7 @@
                         <outlet property="RiderMapView" destination="4TL-N4-aJS" id="MDb-bi-8fp"/>
                         <outlet property="dropOffLocation" destination="6iy-VI-zRg" id="yFS-v0-xiq"/>
                         <outlet property="pickUpLocation" destination="H4p-fi-SOM" id="HaC-qI-Pma"/>
-                        <segue destination="cLu-GP-Mtw" kind="presentation" identifier="findDriver" modalPresentationStyle="overCurrentContext" id="aGf-wM-vqk"/>
+                        <outlet property="routeButton" destination="bKc-OG-dQr" id="prk-Lb-YEa"/>
                         <segue destination="xKo-81-uIm" kind="presentation" identifier="NoDriver" modalPresentationStyle="overCurrentContext" id="4Ek-kO-5Mp"/>
                     </connections>
                 </viewController>
@@ -947,27 +958,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Sj-8r-NHH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4229" y="520"/>
-        </scene>
-        <!--Find Driver Controller-->
-        <scene sceneID="1CQ-di-LU4">
-            <objects>
-                <viewController id="cLu-GP-Mtw" customClass="FindDriverController" customModule="UniDriver" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="7PV-js-SFu">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="uyE-d3-FLY">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="m8n-j0-mmL">
-                                <rect key="frame" x="20" y="7" width="36" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="union"/>
-                                <connections>
-                                    <action selector="back:" destination="cLu-GP-Mtw" eventType="touchUpInside" id="mbN-jH-sdw"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KNq-zq-bZq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2951" y="-597"/>
         </scene>
         <!--Driver Controller-->
         <scene sceneID="7VJ-aw-Sqc">
@@ -1632,6 +1622,7 @@
         <image name="signInButton" width="361" height="57"/>
         <image name="union" width="17.666666030883789" height="15"/>
         <image name="west_porch001-b" width="1600" height="900"/>
+        <image name="yellow" width="361" height="57"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7in-ZB-XIV"/>

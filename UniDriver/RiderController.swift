@@ -14,6 +14,8 @@ class RiderController: UIViewController, UITextFieldDelegate {
     private let LocationManager = CLLocationManager()
     var controller = UniDataController()
     var signedInUser: UniUser?
+    @IBOutlet weak var routeButton: UIButton!
+    
     @IBOutlet weak var pickUpLocation: UITextField!
     @IBOutlet weak var dropOffLocation: UITextField!
     @IBOutlet weak var RiderMapView: GMSMapView!
@@ -27,10 +29,6 @@ class RiderController: UIViewController, UITextFieldDelegate {
         pickUpLocation.delegate = self
         dropOffLocation.delegate = self
         
-    }
-    
-    @IBAction func unwindToRider(_ sender: UIStoryboardSegue){
-        NoDrivers(self)
     }
     
     
@@ -48,16 +46,14 @@ class RiderController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func Route(_ sender: Any) {
-        
+        routeButton.isHidden = true
+        routeButton.isEnabled = false
     }
     
     @IBAction func AccountInfo(_ sender: Any) {
         //self.performSegue(withIdentifier: "RiderAccount", sender: self)
     }
     
-    func NoDrivers(_ sender: Any){
-        self.performSegue(withIdentifier: "NoDriver", sender: self)
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "RiderAccount" {
@@ -71,7 +67,29 @@ class RiderController: UIViewController, UITextFieldDelegate {
             destinationVC.signedInUser = signedInUser
         } 
     }
+    
+    // MARK: - Model
+       
+   func NoDrivers(_ sender: Any){
+       self.performSegue(withIdentifier: "NoDriver", sender: self)
+   }
    
+    
+    @IBAction func findDrivers(_ sender: Any) {
+           controller.getDriveList(){
+               list in
+               
+               for driver in list {
+                  // if driver?.isLoggedIn == false {
+                      // print("Found Driver")
+                      // self.foundDriver = true
+                  // }
+               }
+           }
+    
+           print("Find Drivers")
+           
+    }
 }
 
 // MARK: - CLLocationManagerDelegate
