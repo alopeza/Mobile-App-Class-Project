@@ -23,6 +23,16 @@ class UniDataController{
         
         let userRef = self.userDB.child(user.username)
         userRef.setValue(user.toAnyObject())
+        /*
+        {
+            (error: Error?, ref:DatabaseReference) in
+            if let error = error {
+                print("Data was not saved: \(error)")
+            } else {
+                print("Saved successfully")
+            }
+        }
+        */
         
         guard let trips = user.previousTrips else {return}
         let tripRef = self.tripDB.child(user.username)
@@ -34,7 +44,7 @@ class UniDataController{
     
     func testSave() {
         //let newUser = UniUser(username: "cookr04", name: "Robert Cook", email: "robert.cook@okstate.edu", userType: .Driver)
-        let newUser = UniUser(username: "cookrdriver02", password: "password", name: "Robert Cook", email: "robert.cook@okstate.edu", userType: .Driver)
+        let newUser = UniUser(username: "cookrrider02", password: "password", name: "Robert Cook", email: "robert.cook@okstate.edu", userType: .Rider)
         
         newUser.setCurrentLocation(lat: 2.554, long: 7.867)
         newUser.setVehicle(make: "Honda", model: "Pilot", color: "2012", licensePlate: "frr433")
@@ -42,6 +52,8 @@ class UniDataController{
         newUser.isLoggedIn = true
         self.Save(user: newUser)
     }
+    
+    //Mark: Get Methods
     
     func getUser(userName: String, completition: @escaping (UniUser?) -> Void) -> Void {
         var returnUser:UniUser?
@@ -71,7 +83,46 @@ class UniDataController{
         })
     }
     
+    func getDriverActiveTrip(userName: String, completition: @escaping (Trip?) -> Void) -> Void {
+        var activeTrip: Trip?
+        self.tripDB.queryOrdered(byChild: "driverUserName").queryEqual(toValue: userName).observeSingleEvent(of: .value, with: {snapshot in
+            activeTrip = Trip()
+            completition(activeTrip)
+        })
+    }
+    
+    func getPreviousTripList(user: UniUser, completition: @escaping ([Trip?]) -> Void) -> Void {
+        var tripList = [Trip?]()
+        let childElement: String
+        if user.userType == .Driver {
+            childElement = "driverUserName"
+        } else {
+            childElement = "riderUserName"
+        }
+        
+        self.tripDB.queryOrdered(byChild: childElement).queryEqual(toValue: user.username).observe(.value, with: {snapshot in
+            let tripDict = snapshot.value as? [String: AnyObject]
+            if let tripDict = tripDict {
+                for trip in tripDict {
+                    let tripValues = trip.value as? [String: AnyObject]
+                    let addTrip = Trip(value: tripValues!, ref: snapshot.ref, key: "")
+                    tripList.append(addTrip)
+                }
+            }
+            completition(tripList)
+        })
+    }
+    
+    //Mark: Update Methods
+
+    //This overload is only here to prevent breaking changes, as the driverUserName
+    //was a new addition. This needs to be depricated
     func startTrip(user: UniUser, start: Location, destination: Location, fare: Double){
+        startTrip(user: user, start: start, destination: destination, fare: fare, driverUserName: "")
+        
+    }
+    
+    func startTrip(user: UniUser, start: Location, destination: Location, fare: Double, driverUserName: String){
         user.currentTrip = Trip()
         user.currentTrip?.startLocation = start
         user.currentTrip?.destination = destination
@@ -79,6 +130,11 @@ class UniDataController{
         user.currentTrip?.tripStartDate = Date()
         user.currentTrip?.tripEndDate = Date()
         user.currentTrip?.tripCost = 0.00
+        user.currentTrip?.isActive = true
+        user.currentTrip?.isComplete = false
+        user.currentTrip?.driverUserName = driverUserName
+        user.currentTrip?.riderUserName = user.username
+        addCurrentTripToHistory(user: user)
     }
     
     func endTrip(user: UniUser) {
@@ -87,5 +143,17 @@ class UniDataController{
         let seconds = Double(intervalSeconds!)
         let totalCost = (user.currentTrip!.fare) * (seconds / 60 / 60)
         user.currentTrip?.tripCost = totalCost
+        user.currentTrip?.isActive = false
+        user.currentTrip?.isComplete = true
+        
+        //addCurrentTripToHistory(user: user)
+        
+        user.currentTrip = nil
+    }
+    
+    private func addCurrentTripToHistory(user: UniUser){
+        let trip = user.currentTrip!
+        user.previousTrips = [Trip]()
+        user.previousTrips?.append(trip)
     }
 }

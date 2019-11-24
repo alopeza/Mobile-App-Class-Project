@@ -52,7 +52,7 @@ class RiderController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func AccountInfo(_ sender: Any) {
-        self.performSegue(withIdentifier: "RiderAccount", sender: self)
+        //self.performSegue(withIdentifier: "RiderAccount", sender: self)
     }
     
     func NoDrivers(_ sender: Any){
