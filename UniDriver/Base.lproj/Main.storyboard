@@ -768,7 +768,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.87" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_find_driver" translatesAutoresizingMaskIntoConstraints="NO" id="vXp-kp-hN5">
-                                <rect key="frame" x="0.0" y="737" width="414" height="159"/>
+                                <rect key="frame" x="0.0" y="578" width="414" height="318"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKc-OG-dQr">
                                 <rect key="frame" x="53" y="789" width="308" height="57"/>
