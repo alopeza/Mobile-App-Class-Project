@@ -48,7 +48,7 @@ class RiderController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func Route(_ sender: Any) {
-        self.performSegue(withIdentifier: "findDriver", sender: self)
+        
     }
     
     @IBAction func AccountInfo(_ sender: Any) {

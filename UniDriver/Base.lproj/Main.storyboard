@@ -952,30 +952,6 @@
         <scene sceneID="1CQ-di-LU4">
             <objects>
                 <viewController id="cLu-GP-Mtw" customClass="FindDriverController" customModule="UniDriver" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="h4u-fp-fZR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yj-qh-Det">
-                                <rect key="frame" x="27" y="789" width="361" height="57"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="57" id="GnA-qB-f6M"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Gibson-SemiBold" family="Gibson" pointSize="17"/>
-                                <state key="normal" title="FIND DRIVER" backgroundImage="yellow"/>
-                                <connections>
-                                    <action selector="findDrivers:" destination="cLu-GP-Mtw" eventType="touchUpInside" id="VSO-xg-78j"/>
-                                    <segue destination="ZGT-rO-iqU" kind="unwind" unwindAction="unwindToRider:" id="NXB-0Z-8VG"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="6yj-qh-Det" firstAttribute="leading" secondItem="jYy-sK-a9M" secondAttribute="leading" constant="27" id="Z3q-Qe-dWA"/>
-                            <constraint firstItem="jYy-sK-a9M" firstAttribute="bottom" secondItem="6yj-qh-Det" secondAttribute="bottom" constant="16" id="t7E-mR-V1b"/>
-                            <constraint firstItem="jYy-sK-a9M" firstAttribute="trailing" secondItem="6yj-qh-Det" secondAttribute="trailing" constant="26" id="y9X-vj-Ixv"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="jYy-sK-a9M"/>
-                    </view>
                     <navigationItem key="navigationItem" id="7PV-js-SFu">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="uyE-d3-FLY">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="m8n-j0-mmL">
@@ -990,7 +966,6 @@
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KNq-zq-bZq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="ZGT-rO-iqU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2951" y="-597"/>
         </scene>
@@ -1651,7 +1626,6 @@
         <image name="signInButton" width="361" height="57"/>
         <image name="union" width="17.666666030883789" height="15"/>
         <image name="west_porch001-b" width="1600" height="900"/>
-        <image name="yellow" width="361" height="57"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7in-ZB-XIV"/>
