@@ -7,7 +7,7 @@
 import UIKit
 import GoogleMaps
 
-class RiderController: UIViewController {
+class RiderController: UIViewController, UITextFieldDelegate {
     
     
 
@@ -25,9 +25,14 @@ class RiderController: UIViewController {
         super.viewDidLoad()
         LocationManager.delegate = self as? CLLocationManagerDelegate
         LocationManager.requestWhenInUseAuthorization()
+        pickUpLocation.delegate = self
+        dropOffLocation.delegate = self
         
-        
-        
+    }
+    
+    func textFieldShouldReturn(_ scoreText: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
     }
 
     @IBAction func back(_ sender: Any) {
