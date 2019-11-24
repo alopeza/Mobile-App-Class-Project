@@ -14,7 +14,9 @@ class RiderController: UIViewController, UITextFieldDelegate {
     private let LocationManager = CLLocationManager()
     var controller = UniDataController()
     var signedInUser: UniUser?
+    
     @IBOutlet weak var routeButton: UIButton!
+    @IBOutlet weak var findDriverButton: UIButton!
     
     @IBOutlet weak var pickUpLocation: UITextField!
     @IBOutlet weak var dropOffLocation: UITextField!
@@ -28,6 +30,9 @@ class RiderController: UIViewController, UITextFieldDelegate {
         LocationManager.requestWhenInUseAuthorization()
         pickUpLocation.delegate = self
         dropOffLocation.delegate = self
+        
+        findDriverButton.isEnabled = false
+        findDriverButton.isHidden = true
         
     }
     
@@ -48,6 +53,8 @@ class RiderController: UIViewController, UITextFieldDelegate {
     @IBAction func Route(_ sender: Any) {
         routeButton.isHidden = true
         routeButton.isEnabled = false
+        findDriverButton.isEnabled = true
+        findDriverButton.isHidden = false
     }
     
     @IBAction func AccountInfo(_ sender: Any) {
@@ -61,34 +68,31 @@ class RiderController: UIViewController, UITextFieldDelegate {
             destinationVC.controller = controller
             destinationVC.signedInUser = signedInUser
         }
-        else if segue.identifier == "findDriver" {
-            let destinationVC = segue.destination as! FindDriverController
-            destinationVC.controller = controller
-            destinationVC.signedInUser = signedInUser
-        } 
+        
     }
     
     // MARK: - Model
        
-   func NoDrivers(_ sender: Any){
+   func NoDrivers(){
        self.performSegue(withIdentifier: "NoDriver", sender: self)
    }
    
     
     @IBAction func findDrivers(_ sender: Any) {
+        
            controller.getDriveList(){
                list in
                
                for driver in list {
-                  // if driver?.isLoggedIn == false {
-                      // print("Found Driver")
-                      // self.foundDriver = true
-                  // }
+                   if driver?.isLoggedIn == false {
+                       print("Found Driver")
+                       
+                   }
                }
            }
     
            print("Find Drivers")
-           
+           NoDrivers()
     }
 }
 
